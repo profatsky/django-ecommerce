@@ -1,0 +1,57 @@
+{% extends 'shop/base.html' %}
+{% load humanize %}
+
+{% block content %}
+<section class="catalog">
+    <div class="catalog__content">
+        <div class="catalog__goods">
+            <div class="catalog__cards">
+                <ul class="catalog__cards-list">
+                    {% for product in product_list %}
+                        <li>
+                            <a href="{{ product.get_absolute_url }}" class="catalog__card">
+                                <div class="item-img">
+                                    <img src="{{ product.image.url }}">
+                                </div>
+                                <h3 class="item-name">
+                                    {{ product }}
+                                </h3>
+                                <p class="old-price">{{ product.price|intcomma }} RUB</p>
+                                <p class="new-price">{{ product.discount_price|intcomma }} RUB</p>
+                                <div class="card__btn">
+                                    <button class="btn-buy">В корзину</button>
+                                </div>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% if page_obj.has_other_pages %}
+                    <ul class="catalog__pagination-list">
+                        {% if page_obj.has_previous %}
+                            <li class="pagination__item">
+                                <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+                            </li>
+                        {% endif %}
+                        {% for page_num in paginator.page_range %}
+                            {% if page_obj.number == page_num %}
+                                <li class="pagination__active">
+                                    <a href="#">{{ page_num }}</a>
+                                </li>
+                            {% else %}
+                                <li class="pagination__item">
+                                    <a href="?page={{ page_num }}">{{ page_num }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                            <li class="pagination__item">
+                                <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
