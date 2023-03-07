@@ -221,7 +221,7 @@ class ScreenRefreshRate(models.Model):
 
 
 class SmartPhoneMainCamera(models.Model):
-    smartphone = models.ForeignKey(Smartphone, related_name='main_camera', on_delete=models.CASCADE,
+    smartphone = models.ForeignKey(Smartphone, related_name='main_cameras', on_delete=models.CASCADE,
                                    verbose_name='Смартфон')
     megapixels = models.PositiveSmallIntegerField(verbose_name='МПикс')
 
@@ -234,7 +234,7 @@ class SmartPhoneMainCamera(models.Model):
 
 
 class SmartPhoneFrontCamera(models.Model):
-    smartphone = models.ForeignKey(Smartphone, related_name='front_camera', on_delete=models.CASCADE,
+    smartphone = models.ForeignKey(Smartphone, related_name='front_cameras', on_delete=models.CASCADE,
                                    verbose_name='Смартфон')
     megapixels = models.PositiveSmallIntegerField(verbose_name='МПикс')
 

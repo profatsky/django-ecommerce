@@ -1,0 +1,69 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+<section class="product-detail">
+    <div class="container">
+        <div class="product">
+            <div class="product__image">
+                <img src="{{ product.image.url }}">
+            </div>
+            <div class="product__info">
+                <h3 class="product__title">{{ product }}</h3>
+                <div class="product__price">
+                    <p class="product__price_new">{{ product.discount_price }} RUB</p>
+                    <p class="product__price_old">{{ product.price }}</p>
+                </div>
+                <button class="btn-buy">В корзину</button>
+                <div class="product__features">
+                    <h4>Характеристики:</h4>
+                    <ul class="product__features-list">
+                        {% block product_features %}{% endblock %}
+                    </ul>
+                </div>
+                <a href="#" class="btn-more">Все характеристики</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="recommended-products">
+    <div class="container">
+        <h3>Рекомендуемые товары</h3>
+        <ul class="catalog__cards-list recommended-products__list">
+            <li class="catalog__card">
+                <div class="item-img">
+                    <img src="MME73.jpg">
+                </div>
+                <h3 class="item-name">
+                    Наушники
+                </h3>
+                <p class="old-price">15600 RUB</p>
+                <p class="new-price">12400 RUB</p>
+                <button class="btn-buy">В корзину</button>
+            </li>
+            <li class="catalog__card">
+                <div class="item-img">
+                    <img src="MME73.jpg">
+                </div>
+                <h3 class="item-name">
+                    Наушники
+                </h3>
+                <p class="old-price">15600 RUB</p>
+                <p class="new-price">12400 RUB</p>
+                <button class="btn-buy">В корзину</button>
+            </li>
+            <li class="catalog__card">
+                <div class="item-img">
+                    <img src="MME73.jpg">
+                </div>
+                <h3 class="item-name">
+                    Наушники
+                </h3>
+                <p class="old-price">15600 RUB</p>
+                <p class="new-price">12400 RUB</p>
+                <button class="btn-buy">В корзину</button>
+            </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

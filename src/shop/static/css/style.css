@@ -451,12 +451,12 @@ footer {
 }
 
 .product__info {
-    width: 480px;
+    width: 600px;
 }
 
 .product__title {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 26px;
+    font-weight: 600;
     line-height: 35px;
 }
 
@@ -512,11 +512,11 @@ footer {
 
 .feature__key {
     margin: 0;
-    width: 250px;
+    width: 300px;
 }
 
 .feature__value {
-    width: 150px;
+    width: 300px;
     margin: 0;
 }
 

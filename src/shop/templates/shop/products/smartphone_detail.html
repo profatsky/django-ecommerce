@@ -1,0 +1,50 @@
+{% extends 'shop/products/product_detail.html' %}
+
+{% block product_features %}
+<li>
+    <p class="feature__key">Экран</p>
+    <p class="feature__value">
+        {{ product.screen_diagonal }}"/
+        {{ product.screen_resolution_vertical }}x{{ product.screen_resolution_horizontal }} Пикс</p>
+</li>
+<li>
+    <p class="feature__key">Технология экрана</p>
+    <p class="feature__value">{{ product.screen_technology }}</p>
+</li>
+<li>
+    <p class="feature__key">Тип процессора</p>
+    <p class="feature__value">{{ product.CPU }}</p>
+</li>
+<li>
+    <p class="feature__key">Встроенная память (ROM)</p>
+    <p class="feature__value">{{ product.ROM }}</p>
+</li>
+<li>
+    <p class="feature__key">Основная камера МПикс</p>
+    <p class="feature__value">
+        {% for camera in product.main_cameras.all %}
+            {{ camera.megapixels }}
+            {% if not forloop.last %}
+                /
+            {% endif %}
+        {% endfor %}
+    </p>
+</li>
+<li>
+    <p class="feature__key">Разрешение видеосъемки</p>
+    <p class="feature__value">
+        {{ product.video_resolution_horizontal }}x{{ product.video_resolution_vertical }} Пикс
+    </p>
+</li>
+<li>
+    <p class="feature__key">Корпус</p>
+    <p class="feature__value">
+        {% for material in product.body_materials.all %}
+            {{ material.title }}
+            {% if not forloop.last %}
+                /
+            {% endif %}
+        {% endfor %}
+    </p>
+</li>
+{% endblock %}
