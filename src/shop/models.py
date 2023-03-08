@@ -156,7 +156,10 @@ class Smartphone(Product):
         verbose_name_plural = 'Смартфоны'
 
     def __str__(self):
-        return f'Смартфон {self.brand} {self.series} {self.RAM}/{self.ROM} {self.color}'
+        title = f'Смартфон {self.brand} {self.series} {self.RAM}/{self.ROM}GB {self.color}'
+        if self.model:
+            title += f' ({self.model})'
+        return title
 
 
 class ManufacturerCountry(models.Model):

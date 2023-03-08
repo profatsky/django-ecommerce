@@ -1,4 +1,5 @@
 {% extends 'shop/base.html' %}
+{% load humanize %}
 
 {% block content %}
 <section class="specification">
@@ -14,8 +15,12 @@
             </ul>
         </div>
         <div class="header__buy">
-            <p class="product__price_new">{{ product.discount_price }}</p>
-            <p class="product__price_old">{{ product.price }}</p>
+            {% if product.discount_price %}
+                <p class="product__price_new">{{ product.discount_price.normalize|intcomma  }} ₽</p>
+                <p class="product__price_old">{{ product.price.normalize|intcomma  }} ₽</p>
+            {% else %}
+                <p class="product__price_new">{{ product.price.normalize|intcomma }} ₽</p>
+            {% endif %}
             <div class="btn-buy">В корзину</div>
         </div>
     </div>

@@ -16,8 +16,14 @@
                                 <h3 class="item-name">
                                     {{ product }}
                                 </h3>
-                                <p class="old-price">{{ product.price|intcomma }} RUB</p>
-                                <p class="new-price">{{ product.discount_price|intcomma }} RUB</p>
+                                <div class="item-price">
+                                    {% if product.discount_price %}
+                                        <p class="new-price">{{ product.discount_price.normalize|intcomma }} ₽</p>
+                                        <p class="old-price">{{ product.price.normalize|intcomma }} ₽</p>
+                                    {% else %}
+                                        <p class="new-price">{{ product.price.normalize|intcomma }} ₽</p>
+                                    {% endif %}
+                                </div>
                                 <div class="card__btn">
                                     <button class="btn-buy">В корзину</button>
                                 </div>

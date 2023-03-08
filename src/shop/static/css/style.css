@@ -235,7 +235,7 @@ a {
 
 .catalog__card {
     width: 280px;
-    height: 460px;
+    height: 440px;
     position: relative;
     border: 1px solid #EAEAEA;
     display: flex;
@@ -264,29 +264,38 @@ a {
     font-size: 18px;
     line-height: 20px;
     text-align: center;
-    margin-top: 15px;
     margin-bottom: 0;
+    display: inline-block;
+    height: 70px;
+    width: 220px;
+}
+
+.item-price {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
 }
 
 .old-price {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 18px;
     color: #A9A9A9;
     text-decoration: line-through;
-    text-align: center;
-    margin-bottom: 0;
+    vertical-align: bottom;
 }
 
 .new-price {
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 21px;
     line-height: 18px;
-    text-align: center;
 }
 
 .card__btn {
-    margin-top: 400px;
+    margin-top: 380px;
     position: absolute;
 }
 
