@@ -50,6 +50,9 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('product_detail', kwargs={'category_slug': self.category.slug, 'product_slug': self.slug})
 
+    def get_specification_url(self):
+        return reverse('product_specification', kwargs={'category_slug': self.category.slug, 'product_slug': self.slug})
+
 
 class Smartphone(Product):
     # Заводские данные
@@ -137,8 +140,8 @@ class Smartphone(Product):
     # Комплектация
     charger = models.BooleanField(default=False, verbose_name='Зарядное устройство')
     screen_protector = models.BooleanField(default=False, verbose_name='Защитная пленка для экрана')
-    cable = models.ManyToManyField('SmartPhoneCable', related_name='smartphones', verbose_name='Кабель')
-
+    cable = models.ForeignKey('SmartPhoneCable', related_name='smartphones', on_delete=models.PROTECT,
+                              verbose_name='Кабель')
     # Вес
     weight = models.PositiveSmallIntegerField(verbose_name='Вес (г)')
 

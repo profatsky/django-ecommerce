@@ -23,3 +23,8 @@ class ProductDetailView(generic.DetailView):
 
     def get_template_names(self):
         return f'shop/products/{type(self.object).__name__.lower()}_detail.html'
+
+
+class ProductSpecificationView(ProductDetailView):
+    def get_template_names(self):
+        return f'shop/products/{type(self.object).__name__.lower()}_specification.html'

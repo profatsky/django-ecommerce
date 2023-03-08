@@ -1,0 +1,27 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+<section class="specification">
+    <div class="specification__header">
+        <div class="header__product">
+            <img src="{{ product.image.url }}">
+            <p>{{ product }}</p>
+        </div>
+        <div class="header__menu">
+            <ul>
+                <li><a href="{{ product.get_absolute_url }}">О товаре</a></li>
+                <li><a href="#specification__body" class="link-active">Характеристики</a></li>
+            </ul>
+        </div>
+        <div class="header__buy">
+            <p class="product__price_new">{{ product.discount_price }}</p>
+            <p class="product__price_old">{{ product.price }}</p>
+            <div class="btn-buy">В корзину</div>
+        </div>
+    </div>
+    <div class="specification__body" id="specification__body">
+        <h3>Все характеристики</h3>
+        {% block product_features %}{% endblock%}
+    </div>
+</section>
+{% endblock %}

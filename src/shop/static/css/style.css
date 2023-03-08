@@ -20,6 +20,11 @@ body {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
 .container {
     margin: 0 auto;
     width: 1280px;
@@ -503,7 +508,7 @@ footer {
     margin-bottom: 40px;
 }
 
-.product__features li {
+.product__features-list li {
     margin-bottom: 20px;
     line-height: 20px;
     display: flex;
@@ -572,4 +577,72 @@ footer {
 .cart-list .total {
     font-weight: 400;
     font-size: 18px;
+}
+
+/* Specifications */
+.specification__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    font-size: 16px;
+    border-bottom: 2px solid #A9A9A9;
+    margin-bottom: 50px;
+}
+
+.header__product {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header__product img {
+    width: auto;
+    height: 80px;
+}
+
+.header__menu ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    list-style: none;
+}
+
+.header__menu .link-active {
+    color: #2270F8;
+    font-weight: 500;
+}
+
+.header__buy {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    align-items: center;
+}
+
+.header__buy .product__price_new {
+    color: #000000;
+}
+
+.specification__body {
+    width: 1000px;
+}
+
+.specification__body .feature__key {
+    color: #A9A9A9;
+}
+
+.specification__body .feature__value {
+    width: 600px;
+}
+
+.specification__body h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.specification__body h4 {
+    font-size: 20px;
+    font-weight: 500;
 }
