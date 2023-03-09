@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from model_utils.managers import InheritanceManager
 
 
 class Category(models.Model):
@@ -42,8 +43,9 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     updated = models.DateTimeField(auto_now=True, verbose_name='Время обновления')
 
+    objects = InheritanceManager()
+
     class Meta:
-        abstract = True
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
 
