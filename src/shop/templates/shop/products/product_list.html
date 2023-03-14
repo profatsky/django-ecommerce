@@ -25,7 +25,11 @@
                                     {% endif %}
                                 </div>
                                 <div class="card__btn">
-                                    <button class="btn-buy">В корзину</button>
+                                    <form action="{% url 'cart_add' product.id %}" method="post">
+                                        {% csrf_token %}
+                                        <div style="display: none;">{{ cart_form }}</div>
+                                        <button type="submit" class="btn-buy">В корзину</button>
+                                    </form>
                                 </div>
                             </a>
                         </li>

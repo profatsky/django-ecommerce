@@ -1,0 +1,95 @@
+{% extends 'shop/base.html' %}
+{% load humanize %}
+
+{% block content %}
+<section class="cart">
+    {% if not cart %}
+        <div>
+            <h4 class="error-title">Корзина пуста</h4>
+            <a href="{% url 'product_list' 'smartfony' %}" class="back-to-catalog">Вернуться к каталогу товаров</a>
+        </div>
+    {% else %}
+        <div class="cart-list">
+            {% for item in cart %}
+                {% with product=item.product %}
+                    <div class="cart-item">
+                        <div class="cart-item__info">
+                            <div class="cart-item__image">
+                                <img src="{{ product.image.url }}">
+                            </div>
+                            <p class="cart-item__title">{{ product }}</p>
+                        </div>
+                        <div class="cart-item__controls">
+                            <div class="quantity-control">
+                                <form action="{% url 'cart_add' product.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="decrease">-</button>
+                                    {{ item.update_quantity_form.quantity }}
+                                    {{ item.update_quantity_form.update }}
+                                    <button type="submit" class="increase">+</button>
+                                </form>
+                            </div>
+                            <div class="remove-control">
+                                <form action="{% url 'cart_remove' product.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit">Убрать</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="cart-item__price">
+                            {% if product.discount_price %}
+                                <p class="cart-item__price_new">{{ item.total_discount_price.normalize|intcomma }} ₽</p>
+                                <p class="cart-item__price_old">{{ item.total_price.normalize|intcomma }} ₽</p>
+                            {% else %}
+                                <p class="cart-item__price_new">{{ item.total_price.normalize|intcomma }} ₽</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endwith %}
+            {% endfor %}
+        </div>
+        <div class="order-details">
+            <h4 class="order-details__title">Детали заказа</h4>
+            <ul class="order-details__list">
+                <li>
+                    <p class="order-detail__key">Товаров</p>
+                    <p class="order-detail__value">{{ cart|length }} шт</p>
+                </li>
+                {% if cart.get_total_discount %}
+                    <li>
+                        <p class="order-detail__key">Цена без скидки</p>
+                        <p class="order-detail__value">{{ cart.get_total_price.normalize|intcomma }} ₽</p>
+                    </li>
+                    <li>
+                        <p class="order-detail__key">Скидка</p>
+                        <p class="order-detail__value">— {{ cart.get_total_discount.normalize|intcomma }} ₽</p>
+                    </li>
+                    <li class="total">
+                        <p class="order-detail__key">Итого</p>
+                        <p class="order-detail__value">{{ cart.get_total_discount_price.normalize|intcomma }} ₽</p>
+                    </li>
+                {% else %}
+                    <li class="total">
+                        <p class="order-detail__key">Итого</p>
+                        <p class="order-detail__value">{{ cart.get_total_price.normalize|intcomma }} ₽</p>
+                    </li>
+                {% endif %}
+            </ul>
+            <div class="order-details__buttons">
+                <a href="#" class="purchase">Оформить заказ</a>
+                <a href="{% url 'product_list' 'smartfony' %}" class="continue-shopping">Продолжить покупки</a>
+            </div>
+        </div>
+    {% endif %}
+</section>
+
+<script>
+    document.addEventListener('click', function (e) {
+        if (e.target.classList.contains("increase")) {
+            ++e.target.parentElement.querySelector("select").value;
+        } else if (e.target.classList.contains("decrease")) {
+            --e.target.parentElement.querySelector("select").value;
+        }
+    })
+</script>
+{% endblock %}

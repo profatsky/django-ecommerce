@@ -18,7 +18,11 @@
                         <p class="product__price_new">{{ product.price.normalize|intcomma }} ₽</p>
                     {% endif %}
                 </div>
-                <button class="btn-buy">В корзину</button>
+                <form action="{% url 'cart_add' product.id %}" method="post">
+                    {% csrf_token %}
+                    <div style="display: none;">{{ cart_form }}</div>
+                    <button type="submit" class="btn-buy">В корзину</button>
+                </form>
                 <div class="product__features">
                     <h4>Характеристики:</h4>
                     <ul class="product__features-list">
