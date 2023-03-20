@@ -76,7 +76,7 @@
                 {% endif %}
             </ul>
             <div class="order-details__buttons">
-                <a href="#" class="purchase">Оформить заказ</a>
+                <a href="{% url 'order_create' %}" class="purchase">Оформить заказ</a>
                 <a href="{% url 'product_list' 'smartfony' %}" class="continue-shopping">Продолжить покупки</a>
             </div>
         </div>
