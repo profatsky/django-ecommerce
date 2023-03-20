@@ -645,16 +645,6 @@ footer {
     gap: 70px;
 }
 
-.cart .error-title {
-    text-align: center;
-    font-size: 32px;
-}
-
-.cart .back-to-catalog {
-    color: #2270F8;
-}
-
-
 .cart-list {
     width: 800px;
 }
@@ -804,3 +794,19 @@ footer {
     border: 2px solid #2270F8;
     color: #2270F8;
 }
+
+/* Notification */
+
+.notification {
+    text-align: center;
+}
+
+.notification-title {
+    text-align: center;
+    font-size: 32px;
+}
+
+.back-to-catalog {
+    color: #2270F8;
+}
+

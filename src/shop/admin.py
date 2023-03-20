@@ -1,21 +1,18 @@
 from django.contrib import admin
 from django.utils.text import slugify
 
-from .models import Category, Brand, Smartphone, ManufacturerCountry, OperatingSystem, SmartPhoneCPU, SmartPhoneUSBPort, \
-    ScreenTechnology, SmartPhoneMainCamera, SmartPhoneFrontCamera, SIMCard, SmartPhoneSensor, SmartPhoneBodyMaterial, \
-    SmartPhoneBodyProtection, SmartPhoneColor, SmartPhoneCable, SmartPhoneBatteryType, \
-    DataTransmissionStandard, ScreenRefreshRate
+from . import models
 from .utils import translate
 
 
-@admin.register(Category)
+@admin.register(models.Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('title',)
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ('title',)
 
 
-@admin.register(Brand)
+@admin.register(models.Brand)
 class BrandAdmin(admin.ModelAdmin):
     list_display = ('title',)
     prepopulated_fields = {'slug': ('title',)}
@@ -23,14 +20,14 @@ class BrandAdmin(admin.ModelAdmin):
 
 
 class MainCameraInline(admin.StackedInline):
-    model = SmartPhoneMainCamera
+    model = models.SmartPhoneMainCamera
 
 
 class FrontCameraInline(admin.StackedInline):
-    model = SmartPhoneFrontCamera
+    model = models.SmartPhoneFrontCamera
 
 
-@admin.register(Smartphone)
+@admin.register(models.Smartphone)
 class SmartPhoneAdmin(admin.ModelAdmin):
     list_display = ('brand', 'series', 'model', 'RAM', 'ROM', 'color', 'price', 'discount_price', 'units')
     list_display_links = ('brand', 'series')
@@ -70,7 +67,6 @@ class SmartPhoneAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         cd = form.cleaned_data
-        print(f"aaaaa {change}")
         obj.slug = "-".join((
             slugify(cd['brand']),
             slugify(cd['series']),
@@ -81,81 +77,81 @@ class SmartPhoneAdmin(admin.ModelAdmin):
         obj.save()
 
 
-@admin.register(ManufacturerCountry)
+@admin.register(models.ManufacturerCountry)
 class ManufacturerCountryAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(OperatingSystem)
+@admin.register(models.OperatingSystem)
 class OperatingSystemAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(SmartPhoneCPU)
+@admin.register(models.SmartPhoneCPU)
 class SmartPhoneCPUAdmin(admin.ModelAdmin):
     list_display = ('title', 'cores')
 
 
-@admin.register(SmartPhoneUSBPort)
+@admin.register(models.SmartPhoneUSBPort)
 class SmartPhoneUSBPortAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(ScreenTechnology)
+@admin.register(models.ScreenTechnology)
 class ScreenTechnologyAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(ScreenRefreshRate)
+@admin.register(models.ScreenRefreshRate)
 class ScreenRefreshRateAdmin(admin.ModelAdmin):
     list_display = ('value',)
 
 
-@admin.register(SmartPhoneMainCamera)
+@admin.register(models.SmartPhoneMainCamera)
 class SmartPhoneMainCameraAdmin(admin.ModelAdmin):
     list_display = ('smartphone', 'megapixels')
 
 
-@admin.register(SmartPhoneFrontCamera)
+@admin.register(models.SmartPhoneFrontCamera)
 class SmartPhoneFrontCameraAdmin(admin.ModelAdmin):
     list_display = ('smartphone', 'megapixels')
 
 
-@admin.register(SIMCard)
+@admin.register(models.SIMCard)
 class SIMCardAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(DataTransmissionStandard)
+@admin.register(models.DataTransmissionStandard)
 class DataTransmissionStandardAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(SmartPhoneSensor)
+@admin.register(models.SmartPhoneSensor)
 class SmartPhoneSensorAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(SmartPhoneBodyMaterial)
+@admin.register(models.SmartPhoneBodyMaterial)
 class SmartPhoneBodyMaterialAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(SmartPhoneBodyProtection)
+@admin.register(models.SmartPhoneBodyProtection)
 class SmartPhoneBodyProtectionAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(SmartPhoneColor)
+@admin.register(models.SmartPhoneColor)
 class SmartPhoneColorAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(SmartPhoneCable)
+@admin.register(models.SmartPhoneCable)
 class SmartPhoneCableAdmin(admin.ModelAdmin):
     list_display = ('to_phone', 'to_charger')
 
 
-@admin.register(SmartPhoneBatteryType)
+@admin.register(models.SmartPhoneBatteryType)
 class SmartPhoneBatteryTypeAdmin(admin.ModelAdmin):
     list_display = ('title',)

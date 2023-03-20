@@ -4,8 +4,8 @@
 {% block content %}
 <section class="cart">
     {% if not cart %}
-        <div>
-            <h4 class="error-title">Корзина пуста</h4>
+        <div class="notification">
+            <h4 class="notification-title">Корзина пуста</h4>
             <a href="{% url 'product_list' 'smartfony' %}" class="back-to-catalog">Вернуться к каталогу товаров</a>
         </div>
     {% else %}

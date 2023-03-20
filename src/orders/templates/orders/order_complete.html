@@ -1,0 +1,9 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+    <div class="notification">
+        <h4 class="notification-title">Готово!</h4>
+        <p>Ваш заказ успешно оформлен. Номер заказа <b>{{ order.id }}</b></p>
+        <a href="{% url 'product_list' 'smartfony' %}" class="back-to-catalog">Вернуться к каталогу товаров</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+from django.shortcuts import redirect
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, DetailView
+
+from cart.cart import Cart
+from .forms import OrderCreateForm
+from .models import OrderItem, Order
+
+
+class OrderCreateView(CreateView):
+    model = OrderItem
+    form_class = OrderCreateForm
+    template_name = 'orders/order_create.html'
+
+    def form_valid(self, form):
+        order = form.save()
+        cart = Cart(self.request)
+        for item in cart:
+            self.model.objects.create(
+                order=order,
+                product=item['product'],
+                price=item['price'],
+                quantity=item['quantity']
+            )
+            cart.clear()
+        return redirect(self.get_success_url(pk=order.pk))
+            # return render(
+            #     self.request,
+            #     'orders/order_complete.html',
+            #     {'order': order}
+            # )
+
+    def get_success_url(self, pk=None):
+        return reverse_lazy('order_detail', kwargs={'pk': pk})
+
+
+class OrderDetailVIew(DetailView):
+    model = Order
+    template_name = 'orders/order_complete.html'
