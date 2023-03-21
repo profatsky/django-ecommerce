@@ -5,6 +5,7 @@ from django.views.generic import CreateView, DetailView
 from cart.cart import Cart
 from .forms import OrderCreateForm
 from .models import OrderItem, Order
+from .tasks import send_checkout_notification
 
 
 class OrderCreateView(CreateView):
@@ -28,6 +29,7 @@ class OrderCreateView(CreateView):
                 quantity=item['quantity']
             )
             cart.clear()
+            send_checkout_notification.delay(order.pk)
         return redirect(self.get_success_url(pk=order.pk))
 
     def get_success_url(self, pk=None):
