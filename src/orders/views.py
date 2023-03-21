@@ -12,6 +12,11 @@ class OrderCreateView(CreateView):
     form_class = OrderCreateForm
     template_name = 'orders/order_create.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['cart'] = Cart(self.request)
+        return context
+
     def form_valid(self, form):
         order = form.save()
         cart = Cart(self.request)
@@ -24,11 +29,6 @@ class OrderCreateView(CreateView):
             )
             cart.clear()
         return redirect(self.get_success_url(pk=order.pk))
-            # return render(
-            #     self.request,
-            #     'orders/order_complete.html',
-            #     {'order': order}
-            # )
 
     def get_success_url(self, pk=None):
         return reverse_lazy('order_detail', kwargs={'pk': pk})

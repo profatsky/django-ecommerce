@@ -1,22 +1,27 @@
 {% extends 'shop/base.html' %}
+{% load humanize %}
 
 {% block content %}
-    <h1>Checkout</h1>
-    <div class="order-info">
-        <h3>Your order</h3>
-        <ul>
-            {% for item in cart %}
-                <li>
-                    {{ item.quantity }}x {{ item.product.name }}
-                    <span>{{ item.total_price }} RUB</span>
-                </li>
-            {% endfor %}
-        </ul>
-        <p>Total: {{ cart.get_total_price }} RUB</p>
+    <div class="order">
+        <h1 class="order-title">Оформление заказа</h1>
+        <div class="order-info">
+            <h3>Ваш заказ</h3>
+            <ul>
+                {% for item in cart %}
+                    <li>
+                        {{ item.quantity }}x {{ item.product }} за
+                        <span>{{ item.total_price.normalize|intcomma }} ₽</span>
+                    </li>
+                {% endfor %}
+            </ul>
+            <p class="total">Итого: {{ cart.get_total_price.normalize|intcomma }} ₽</p>
+        </div>
+        <div class="order-form">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div>{{ form.as_p }}</div>
+                <input class="order-form__btn" type="submit" value="Перейти к оплате">
+            </form>
+        </div>
     </div>
-    <form action="." method="post" class="order-form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <p><input type="submit" value="Place order"></p>
-    </form>
 {% endblock %}
