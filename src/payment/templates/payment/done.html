@@ -1,0 +1,11 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Оплачено{% endblock %}
+
+{% block content %}
+    <div class="notification">
+        <h1>Оплата прошла успешна</h1>
+        <p>Ваш заказ успешно оплачен!</p>
+        <a href="{% url 'product_list' 'smartfony' %}" class="back-to-catalog">Вернуться к каталогу товаров</a>
+    </div>
+{% endblock %}

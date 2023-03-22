@@ -1,10 +1,10 @@
 from django.shortcuts import redirect
-from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.urls import reverse
+from django.views.generic import CreateView
 
 from cart.cart import Cart
 from .forms import OrderCreateForm
-from .models import OrderItem, Order
+from .models import OrderItem
 from .tasks import send_checkout_notification
 
 
@@ -28,14 +28,7 @@ class OrderCreateView(CreateView):
                 price=item['price'],
                 quantity=item['quantity']
             )
-            cart.clear()
-            send_checkout_notification.delay(order.pk)
-        return redirect(self.get_success_url(pk=order.pk))
-
-    def get_success_url(self, pk=None):
-        return reverse_lazy('order_detail', kwargs={'pk': pk})
-
-
-class OrderDetailVIew(DetailView):
-    model = Order
-    template_name = 'orders/order_complete.html'
+        cart.clear()
+        send_checkout_notification.delay(order.pk)
+        self.request.session['order_id'] = order.pk
+        return redirect(reverse('payment:process'))
