@@ -79,8 +79,7 @@ class Smartphone(Product):
     screen_resolution_horizontal = models.PositiveSmallIntegerField(verbose_name='Разрешение экрана по горизонтали')
     screen_technology = models.ForeignKey('ScreenTechnology', related_name='smartphones', on_delete=models.PROTECT,
                                           verbose_name='Технология экрана')
-    screen_refresh_rate = models.ForeignKey('ScreenRefreshRate', related_name='smartphones', on_delete=models.PROTECT,
-                                            verbose_name='Частота обновления экрана (Гц)')
+    screen_refresh_rate = models.PositiveSmallIntegerField(default=60, verbose_name='Частота обновления экрана (Гц)')
 
     # Процессор
     CPU = models.ForeignKey('SmartPhoneCPU', related_name='smartphones',
@@ -126,18 +125,18 @@ class Smartphone(Product):
                                  on_delete=models.PROTECT, verbose_name='Порт USB')
 
     # Корпус
-    body_materials = models.ManyToManyField('SmartPhoneBodyMaterial', related_name='smartphones',
+    body_materials = models.ManyToManyField('GadgetBodyMaterial', related_name='smartphones',
                                             verbose_name='Материал корпуса')
     protection_degree = models.ForeignKey('SmartPhoneBodyProtection', related_name='smartphones',
                                           on_delete=models.PROTECT, blank=True, null=True,
                                           verbose_name='Степень защиты')
-    color = models.ForeignKey('SmartPhoneColor', related_name='smartphones', on_delete=models.PROTECT,
+    color = models.ForeignKey('GadgetColor', related_name='smartphones', on_delete=models.PROTECT,
                               verbose_name='Цвет')
 
     # Электропитание
     charger_power = models.PositiveSmallIntegerField(verbose_name='Мощность блока питания (Вт)')
-    battery_type = models.ForeignKey('SmartPhoneBatteryType', related_name='smartphones', on_delete=models.PROTECT,
-                                     verbose_name='Тип аккумулятора')
+    battery_type = models.ForeignKey('BatteryType', related_name='smartphones', on_delete=models.PROTECT, blank=True,
+                                     null=True, verbose_name='Тип аккумулятора')
     battery_capacity = models.PositiveSmallIntegerField(verbose_name='Емкость аккумулятора (мАч)')
     wireless_charging = models.BooleanField(default=False, verbose_name='Поддержка беспроводной зарядки')
     fast_charging = models.BooleanField(default=False, verbose_name='Поддержка быстрой зарядки')
@@ -145,7 +144,7 @@ class Smartphone(Product):
     # Комплектация
     charger = models.BooleanField(default=False, verbose_name='Зарядное устройство')
     screen_protector = models.BooleanField(default=False, verbose_name='Защитная пленка для экрана')
-    cable = models.ForeignKey('SmartPhoneCable', related_name='smartphones', on_delete=models.PROTECT,
+    cable = models.ForeignKey('GadgetCable', related_name='smartphones', on_delete=models.PROTECT,
                               verbose_name='Кабель')
     # Вес
     weight = models.PositiveSmallIntegerField(verbose_name='Вес (г)')
@@ -191,7 +190,7 @@ class OperatingSystem(models.Model):
 
 class SmartPhoneCPU(models.Model):
     title = models.CharField(max_length=50, verbose_name='Название')
-    cores = models.PositiveSmallIntegerField(blank=True, verbose_name='Кол-во ядер')
+    cores = models.PositiveSmallIntegerField(blank=True, null=True, verbose_name='Кол-во ядер')
 
     class Meta:
         verbose_name = 'Процессор смартфона'
@@ -221,14 +220,6 @@ class ScreenTechnology(models.Model):
 
     def __str__(self):
         return self.title
-
-
-class ScreenRefreshRate(models.Model):
-    value = models.PositiveSmallIntegerField(verbose_name='Значение')
-
-    class Meta:
-        verbose_name = 'Частота обновления экрана'
-        verbose_name_plural = 'Частоты обновления экрана'
 
 
 class SmartPhoneMainCamera(models.Model):
@@ -290,12 +281,12 @@ class SmartPhoneSensor(models.Model):
         return self.title
 
 
-class SmartPhoneBodyMaterial(models.Model):
+class GadgetBodyMaterial(models.Model):
     title = models.CharField(max_length=50, verbose_name='Название')
 
     class Meta:
-        verbose_name = 'Материал корпуса смартфона'
-        verbose_name_plural = 'Материалы корпусов смартфонов'
+        verbose_name = 'Материал корпуса гаджета'
+        verbose_name_plural = 'Материал корпуса гаджета'
 
     def __str__(self):
         return self.title
@@ -312,35 +303,127 @@ class SmartPhoneBodyProtection(models.Model):
         return self.title
 
 
-class SmartPhoneColor(models.Model):
+class GadgetColor(models.Model):
     title = models.CharField(max_length=30, verbose_name='Название')
 
     class Meta:
-        verbose_name = 'Цвет смартфона'
-        verbose_name_plural = 'Цвета смартфонов'
+        verbose_name = 'Цвет гаджета'
+        verbose_name_plural = 'Цвета гаджета'
 
     def __str__(self):
         return self.title
 
 
-class SmartPhoneCable(models.Model):
-    to_phone = models.CharField(max_length=15, verbose_name='Штекер в смартфон')
+class GadgetCable(models.Model):
+    to_gadget = models.CharField(max_length=15, verbose_name='Штекер в гаджет')
     to_charger = models.CharField(max_length=15, verbose_name='Штекер в зарядное устройство')
 
     class Meta:
-        verbose_name = 'Кабель смартфона'
-        verbose_name_plural = 'Кабель смартфона'
+        verbose_name = 'Кабель для гаджета'
+        verbose_name_plural = 'Кабель для гаджета'
 
     def __str__(self):
-        return f'{self.to_phone} - {self.to_charger}'
+        return f'{self.to_gadget} - {self.to_charger}'
 
 
-class SmartPhoneBatteryType(models.Model):
+class BatteryType(models.Model):
     title = models.CharField(max_length=50, verbose_name='Название')
 
     class Meta:
-        verbose_name = 'Тип батареи смартфона'
-        verbose_name_plural = 'Типы батарей смартфонов'
+        verbose_name = 'Тип аккумулятора гаджета'
+        verbose_name_plural = 'Тип аккумулятора гаджета'
+
+    def __str__(self):
+        return self.title
+
+
+class Headphones(Product):
+    # Заводские данные
+    guarantee = models.PositiveSmallIntegerField(blank=True, verbose_name='Гарантия')
+    manufacturer_country = models.ForeignKey('ManufacturerCountry', related_name='headphones',
+                                             on_delete=models.PROTECT, verbose_name='Страна производитель')
+
+    # Серия модели
+    series = models.CharField(max_length=30, blank=True, verbose_name='Серия')
+    model = models.CharField(max_length=30, blank=True, verbose_name='Модель')
+
+    # Подключение
+    connection_type = models.ForeignKey('HeadphonesConnectionType', related_name='headphones',
+                                        on_delete=models.PROTECT, verbose_name='Тип подключения наушников')
+
+    # Передача данных
+    bluetooth_version = models.DecimalField(max_digits=2, decimal_places=1, verbose_name='Версия Bluetooth')
+
+    # Тип наушников
+    type = models.ForeignKey('HeadphonesType', related_name='headphones',
+                             on_delete=models.PROTECT, verbose_name='Тип наушников')
+
+    # Микрофон
+    built_in_microphone = models.BooleanField(default=True, verbose_name='Встроенный микрофон')
+
+    # Функции
+    active_noise_control = models.BooleanField(default=False, verbose_name='Система активного подавления шума')
+    use_as_headset = models.BooleanField(default=True, verbose_name='Использование в качестве гарнитуры')
+
+    # Управление
+    playback_control = models.BooleanField(default=True, verbose_name='Управление воспроизведением')
+
+    # Зарядка
+    fast_charging = models.BooleanField(default=False, verbose_name='Быстрая зарядка')
+    wireless_charging = models.BooleanField(default=False, verbose_name='Беспроводная зарядка')
+
+    # Электропитание
+    battery_type = models.ForeignKey('BatteryType', related_name='headphones', on_delete=models.PROTECT,
+                                     verbose_name='Тип аккумулятора')
+    battery_capacity = models.PositiveSmallIntegerField(null=True, verbose_name='Емкость аккумулятора (мАч)')
+    charging_from_USB_port = models.BooleanField(default=True, verbose_name='Зарядка от USB порта')
+
+    # Корпус
+    body_materials = models.ManyToManyField('GadgetBodyMaterial', related_name='headphones',
+                                            verbose_name='Материал корпуса')
+    splashproof_body = models.BooleanField(default=False, verbose_name='Брызгозащитный корпус')
+
+    # Комплектация
+    charger = models.BooleanField(default=False, verbose_name='Зарядное устройство')
+    cable = models.ForeignKey('GadgetCable', related_name='headphones', on_delete=models.PROTECT, blank=True, null=True,
+                              verbose_name='Кабель')
+    ear_pads_pairs = models.PositiveSmallIntegerField(default=0, verbose_name='Пар амбушюров в комплекте')
+
+    # Цвет
+    color = models.ForeignKey('GadgetColor', related_name='headphones', on_delete=models.PROTECT,
+                              verbose_name='Цвет')
+
+    # Вес
+    weight = models.PositiveSmallIntegerField(verbose_name='Вес (г)')
+
+    class Meta:
+        verbose_name = 'Наушники'
+        verbose_name_plural = 'Наушники'
+
+    def __str__(self):
+        title = f'Наушники {self.brand} {self.series}'
+        if self.model:
+            title += f' ({self.model})'
+        return title
+
+
+class HeadphonesConnectionType(models.Model):
+    title = models.CharField(max_length=30, verbose_name='Название')
+
+    class Meta:
+        verbose_name = 'Тип подключения наушников'
+        verbose_name_plural = 'Тип подключения наушников'
+
+    def __str__(self):
+        return self.title
+
+
+class HeadphonesType(models.Model):
+    title = models.CharField(max_length=30, verbose_name='Название')
+
+    class Meta:
+        verbose_name = 'Тип наушников'
+        verbose_name_plural = 'Тип наушников'
 
     def __str__(self):
         return self.title

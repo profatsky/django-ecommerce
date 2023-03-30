@@ -36,7 +36,7 @@ class SmartPhoneAdmin(admin.ModelAdmin):
     date_hierarchy = 'created'
     readonly_fields = ('slug', 'created', 'updated')
     raw_id_fields = ('category', 'brand', 'manufacturer_country', 'operating_system', 'screen_technology',
-                     'screen_refresh_rate', 'CPU', 'SIM_card', 'USB_port', 'protection_degree', 'color', 'battery_type')
+                     'CPU', 'SIM_card', 'USB_port', 'protection_degree', 'color', 'battery_type')
     fieldsets = (
         ('Информация о товаре', {'fields': ('category', 'brand', 'image', 'description',
                                             'price', 'discount_price', 'units', 'slug', 'created', 'updated')}),
@@ -102,11 +102,6 @@ class ScreenTechnologyAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(models.ScreenRefreshRate)
-class ScreenRefreshRateAdmin(admin.ModelAdmin):
-    list_display = ('value',)
-
-
 @admin.register(models.SmartPhoneMainCamera)
 class SmartPhoneMainCameraAdmin(admin.ModelAdmin):
     list_display = ('smartphone', 'megapixels')
@@ -132,8 +127,8 @@ class SmartPhoneSensorAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(models.SmartPhoneBodyMaterial)
-class SmartPhoneBodyMaterialAdmin(admin.ModelAdmin):
+@admin.register(models.GadgetBodyMaterial)
+class GadgetBodyMaterialAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
@@ -142,16 +137,66 @@ class SmartPhoneBodyProtectionAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(models.SmartPhoneColor)
-class SmartPhoneColorAdmin(admin.ModelAdmin):
+@admin.register(models.GadgetColor)
+class GadgetColorAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-@admin.register(models.SmartPhoneCable)
-class SmartPhoneCableAdmin(admin.ModelAdmin):
-    list_display = ('to_phone', 'to_charger')
+@admin.register(models.GadgetCable)
+class GadgetCableAdmin(admin.ModelAdmin):
+    list_display = ('to_gadget', 'to_charger')
 
 
-@admin.register(models.SmartPhoneBatteryType)
-class SmartPhoneBatteryTypeAdmin(admin.ModelAdmin):
+@admin.register(models.BatteryType)
+class BatteryTypeAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+
+@admin.register(models.Headphones)
+class HeadphonesAdmin(admin.ModelAdmin):
+    list_display = ('brand', 'type', 'series', 'model', 'color', 'price', 'discount_price', 'units')
+    list_display_links = ('brand', 'series')
+    list_filter = ('brand', 'color', 'type', 'connection_type')
+    search_fields = ('category', 'brand', 'series', 'model')
+    date_hierarchy = 'created'
+    readonly_fields = ('slug', 'created', 'updated')
+    raw_id_fields = ('category', 'brand', 'manufacturer_country', 'connection_type', 'type', 'battery_type',
+                     'body_materials', 'cable', 'color')
+    fieldsets = (
+        ('Информация о товаре', {'fields': ('category', 'brand', 'image', 'description',
+                                            'price', 'discount_price', 'units', 'slug', 'created', 'updated')}),
+        ('Заводские данные', {'fields': ('guarantee', 'manufacturer_country')}),
+        ('Серия модель', {'fields': ('series', 'model')}),
+        ('Подключение', {'fields': ('connection_type',)}),
+        ('Передача данных', {'fields': ('bluetooth_version',)}),
+        ('Тип наушников', {'fields': ('type',)}),
+        ('Микрофон', {'fields': ('built_in_microphone',)}),
+        ('Функции', {'fields': ('active_noise_control', 'use_as_headset')}),
+        ('Управление', {'fields': ('playback_control',)}),
+        ('Зарядка', {'fields': ('fast_charging', 'wireless_charging')}),
+        ('Электропитание', {'fields': ('battery_type', 'battery_capacity', 'charging_from_USB_port')}),
+        ('Корпус', {'fields': ('body_materials', 'splashproof_body')}),
+        ('Комплектация', {'fields': ('charger', 'cable', 'ear_pads_pairs')}),
+        ('Цвет', {'fields': ('color',)}),
+        ('Вес', {'fields': ('weight',)})
+    )
+
+    def save_model(self, request, obj, form, change):
+        cd = form.cleaned_data
+        obj.slug = "-".join((
+            slugify(cd['brand']),
+            slugify(cd['series']),
+            slugify(cd['model']) if cd['model'] else '',
+            slugify(translate(cd['color'].title))
+        ))
+        obj.save()
+
+
+@admin.register(models.HeadphonesConnectionType)
+class HeadphonesConnectionTypeAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+
+@admin.register(models.HeadphonesType)
+class HeadphonesTypeAdmin(admin.ModelAdmin):
     list_display = ('title',)
