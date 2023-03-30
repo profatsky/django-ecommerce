@@ -13,21 +13,23 @@
     </li>
 </ul>
 
-<h4>Серия модели</h4>
-<ul class="product__features-list">
-    {% if product.series %}
-    <li>
-        <p class="feature__key">Серия</p>
-        <p class="feature__value">{{ product.series }}</p>
-    </li>
-    {% endif %}
-    {% if product.model %}
-    <li>
-        <p class="feature__key">Модель</p>
-        <p class="feature__value">{{ product.model }}</p>
-    </li>
-    {% endif %}
-</ul>
+{% if product.series or product.model %}
+    <h4>Серия модели</h4>
+    <ul class="product__features-list">
+        {% if product.series %}
+        <li>
+            <p class="feature__key">Серия</p>
+            <p class="feature__value">{{ product.series }}</p>
+        </li>
+        {% endif %}
+        {% if product.model %}
+        <li>
+            <p class="feature__key">Модель</p>
+            <p class="feature__value">{{ product.model }}</p>
+        </li>
+        {% endif %}
+    </ul>
+{% endif %}
 
 <h4>Операционная система</h4>
 <ul class="product__features-list">
@@ -206,21 +208,23 @@
     </li>
 </ul>
 
-<h4>Безопасность</h4>
-<ul class="product__features-list">
-    {% if product.face_recognition %}
-        <li>
-            <p class="feature__key">Сенсор распознавания лица</p>
-            <p class="feature__value">Да</p>
-        </li>
-    {% endif %}
-    {% if product.fingerprint_scanner %}
-        <li>
-            <p class="feature__key">Сканер отпечатка пальца</p>
-            <p class="feature__value">Да</p>
-        </li>
-    {% endif %}
-</ul>
+{% if product.face_recognition or product.fingerprint_scanner %}
+    <h4>Безопасность</h4>
+    <ul class="product__features-list">
+        {% if product.face_recognition %}
+            <li>
+                <p class="feature__key">Сенсор распознавания лица</p>
+                <p class="feature__value">Да</p>
+            </li>
+        {% endif %}
+        {% if product.fingerprint_scanner %}
+            <li>
+                <p class="feature__key">Сканер отпечатка пальца</p>
+                <p class="feature__value">Да</p>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
 
 <h4>Интерфейсы</h4>
 <ul class="product__features-list">
@@ -255,51 +259,61 @@
     </li>
 </ul>
 
-<h4>Комплектация</h4>
-<ul class="product__features-list">
-    {% if charger %}
-        <li>
-            <p class="feature__key">Блок питания</p>
-            <p class="feature__value">Да</p>
-        </li>
-    {% endif %}
-    {% if screen_protector %}
-        <li>
-            <p class="feature__key">Защитная пленка</p>
-            <p class="feature__value">Да</p>
-        </li>
-    {% endif %}
-    <li>
-        <p class="feature__key">Кабель</p>
-        <p class="feature__value">
-            {{ product.cable.to_phone }} — {{ product.cable.to_charger }}
-        </p>
-    </li>
-</ul>
+{% if product.charger or product.screen_protector or product.cable %}
+    <h4>Комплектация</h4>
+    <ul class="product__features-list">
+        {% if product.charger %}
+            <li>
+                <p class="feature__key">Блок питания</p>
+                <p class="feature__value">Да</p>
+            </li>
+        {% endif %}
+        {% if product.screen_protector %}
+            <li>
+                <p class="feature__key">Защитная пленка</p>
+                <p class="feature__value">Да</p>
+            </li>
+        {% endif %}
+        {% if product.cable %}
+            <li>
+                <p class="feature__key">Кабель</p>
+                <p class="feature__value">
+                    {{ product.cable.to_gadget }} — {{ product.cable.to_charger }}
+                </p>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
 
-<h4>Электропитание</h4>
-<ul class="product__features-list">
-    {% if product.wireless_charging %}
-    <li>
-        <p class="feature__key">Поддержка беспроводной зарядки</p>
-        <p class="feature__value">Да</p>
-    </li>
-    {% endif %}
-    {% if product.fast_charging %}
-    <li>
-        <p class="feature__key">Поддержка быстрой зарядки</p>
-        <p class="feature__value">Да</p>
-    </li>
-    {% endif %}
-    <li>
-        <p class="feature__key">Мощность блока питания</p>
-        <p class="feature__value">{{ product.charger_power }}</p>
-    </li>
-    <li>
-        <p class="feature__key">Тип аккумулятора</p>
-        <p class="feature__value">{{ product.battery_type }}</p>
-    </li>
-</ul>
+{% if product.wireless_charging or product.fast_charging or product.charger_power or product.battery_type %}
+    <h4>Электропитание</h4>
+    <ul class="product__features-list">
+        {% if product.wireless_charging %}
+        <li>
+            <p class="feature__key">Поддержка беспроводной зарядки</p>
+            <p class="feature__value">Да</p>
+        </li>
+        {% endif %}
+        {% if product.fast_charging %}
+        <li>
+            <p class="feature__key">Поддержка быстрой зарядки</p>
+            <p class="feature__value">Да</p>
+        </li>
+        {% endif %}
+        {% if product.charger_power %}
+        <li>
+            <p class="feature__key">Мощность блока питания</p>
+            <p class="feature__value">{{ product.charger_power }}</p>
+        </li>
+        {% endif %}
+        {% if product.battery_type %}
+            <li>
+                <p class="feature__key">Тип аккумулятора</p>
+                <p class="feature__value">{{ product.battery_type }}</p>
+            </li>
+        {% endif %}
+    </ul>
+{% endif  %}
 
 <h4>Габаритные размеры</h4>
 <ul class="product__features-list">

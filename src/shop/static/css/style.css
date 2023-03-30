@@ -696,6 +696,10 @@ footer {
     margin-left: -20px;
 }
 
+.cart-item__image {
+    width: 250px;
+}
+
 .cart-item__image img {
     width: auto;
     height: 180px;

@@ -1,0 +1,49 @@
+{% extends 'shop/products/product_detail.html' %}
+
+{% block product_features %}
+<li>
+    <p class="feature__key">Тип наушников</p>
+    <p class="feature__value">{{ product.type }}</p>
+</li>
+<li>
+    <p class="feature__key">Тип подключения</p>
+    <p class="feature__value">{{ product.connection_type }}</p>
+</li>
+{% if product.use_as_headset %}
+<li>
+    <p class="feature__key">Использование в качестве гарнитуры</p>
+    <p class="feature__value">Да</p>
+</li>
+{% endif %}
+{% if product.built_in_microphone %}
+<li>
+    <p class="feature__key">Встроенный микрофон</p>
+    <p class="feature__value">Да</p>
+</li>
+{% endif %}
+<li>
+    <p class="feature__key">Корпус</p>
+    <p class="feature__value">
+        {% for material in product.body_materials.all %}
+            {{ material.title }}
+            {% if not forloop.last %}
+                /
+            {% endif %}
+        {% endfor %}
+    </p>
+</li>
+<li>
+    <p class="feature__key">Страна</p>
+    <p class="feature__value">{{ product.manufacturer_country }}</p>
+</li>
+<li>
+    <p class="feature__key">Серия</p>
+    <p class="feature__value">{{ product.series }}</p>
+</li>
+{% if product.model %}
+<li>
+    <p class="feature__key">Модель</p>
+    <p class="feature__value">{{ product.model }}</p>
+</li>
+{% endif %}
+{% endblock %}

@@ -134,18 +134,18 @@ class Smartphone(Product):
                               verbose_name='Цвет')
 
     # Электропитание
-    charger_power = models.PositiveSmallIntegerField(verbose_name='Мощность блока питания (Вт)')
+    charger_power = models.PositiveSmallIntegerField(blank=True, null=True, verbose_name='Мощность блока питания (Вт)')
     battery_type = models.ForeignKey('BatteryType', related_name='smartphones', on_delete=models.PROTECT, blank=True,
                                      null=True, verbose_name='Тип аккумулятора')
-    battery_capacity = models.PositiveSmallIntegerField(verbose_name='Емкость аккумулятора (мАч)')
+    battery_capacity = models.PositiveSmallIntegerField(blank=True, null=True, verbose_name='Емкость аккумулятора (мАч)')
     wireless_charging = models.BooleanField(default=False, verbose_name='Поддержка беспроводной зарядки')
     fast_charging = models.BooleanField(default=False, verbose_name='Поддержка быстрой зарядки')
 
     # Комплектация
     charger = models.BooleanField(default=False, verbose_name='Зарядное устройство')
     screen_protector = models.BooleanField(default=False, verbose_name='Защитная пленка для экрана')
-    cable = models.ForeignKey('GadgetCable', related_name='smartphones', on_delete=models.PROTECT,
-                              verbose_name='Кабель')
+    cable = models.ForeignKey('GadgetCable', related_name='smartphones', on_delete=models.PROTECT, blank=True,
+                              null=True, verbose_name='Кабель')
     # Вес
     weight = models.PositiveSmallIntegerField(verbose_name='Вес (г)')
 
@@ -212,7 +212,7 @@ class SmartPhoneUSBPort(models.Model):
 
 
 class ScreenTechnology(models.Model):
-    title = models.CharField(max_length=6, verbose_name='Название')
+    title = models.CharField(max_length=30, verbose_name='Название')
 
     class Meta:
         verbose_name = 'Технология экрана'
@@ -373,8 +373,8 @@ class Headphones(Product):
     wireless_charging = models.BooleanField(default=False, verbose_name='Беспроводная зарядка')
 
     # Электропитание
-    battery_type = models.ForeignKey('BatteryType', related_name='headphones', on_delete=models.PROTECT,
-                                     verbose_name='Тип аккумулятора')
+    battery_type = models.ForeignKey('BatteryType', related_name='headphones', on_delete=models.PROTECT, blank=True,
+                                     null=True, verbose_name='Тип аккумулятора')
     battery_capacity = models.PositiveSmallIntegerField(null=True, verbose_name='Емкость аккумулятора (мАч)')
     charging_from_USB_port = models.BooleanField(default=True, verbose_name='Зарядка от USB порта')
 

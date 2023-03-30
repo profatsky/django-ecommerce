@@ -58,7 +58,7 @@ class SmartPhoneAdmin(admin.ModelAdmin):
                                        'fast_charging')}),
         ('Комплектация', {'fields': ('charger', 'screen_protector', 'cable')}),
         ('Вес', {'fields': ('weight',)}),
-        ('Габаритные размеры', {'fields': ('width', 'height', 'depth')}),
+        ('Габаритные размеры', {'fields': ('height', 'width', 'depth')}),
         ('Основная камера', {'fields': ('number_of_main_cameras', 'optical_stabilization', 'digital_stabilization',
                                         'LiDAR_scanner', 'video_resolution_horizontal', 'video_resolution_vertical')}),
         ('Фронтальная камера', {'fields': ('number_of_front_cameras',)}),
@@ -161,7 +161,7 @@ class HeadphonesAdmin(admin.ModelAdmin):
     date_hierarchy = 'created'
     readonly_fields = ('slug', 'created', 'updated')
     raw_id_fields = ('category', 'brand', 'manufacturer_country', 'connection_type', 'type', 'battery_type',
-                     'body_materials', 'cable', 'color')
+                     'cable', 'color')
     fieldsets = (
         ('Информация о товаре', {'fields': ('category', 'brand', 'image', 'description',
                                             'price', 'discount_price', 'units', 'slug', 'created', 'updated')}),

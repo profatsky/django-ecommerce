@@ -1,0 +1,196 @@
+{% extends 'shop/products/product_specification.html' %}
+
+{% block product_features %}
+<h4>Заводские данные</h4>
+<ul class="product__features-list">
+    <li>
+        <p class="feature__key">Гарантия</p>
+        <p class="feature__value">{{ product.guarantee }} год</p>
+    </li>
+    <li>
+        <p class="feature__key">Страна</p>
+        <p class="feature__value">{{ product.manufacturer_country }}</p>
+    </li>
+</ul>
+
+{% if product.series or product.model %}
+    <h4>Серия модели</h4>
+    <ul class="product__features-list">
+        {% if product.series %}
+            <li>
+                <p class="feature__key">Серия</p>
+                <p class="feature__value">{{ product.series }}</p>
+            </li>
+        {% endif %}
+        {% if product.model %}
+            <li>
+                <p class="feature__key">Модель</p>
+                <p class="feature__value">{{ product.model }}</p>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+<h4>Подключение</h4>
+<ul class="product__features-list">
+    <li>
+        <p class="feature__key">Тип подключения наушников</p>
+        <p class="feature__value">{{ product.connection_type }}</p>
+    </li>
+</ul>
+
+<h4>Передача данных</h4>
+<ul class="product__features-list">
+    <li>
+        <p class="feature__key">Встроенный модуль Bluetooth</p>
+        <p class="feature__value">{{ product.bluetooth_version.normalize }}</p>
+    </li>
+</ul>
+
+<h4>Тип наушников</h4>
+<ul class="product__features-list">
+    <li>
+        <p class="feature__key">Тип наушников</p>
+        <p class="feature__value">{{ product.type }}</p>
+    </li>
+</ul>
+
+{% if product.built_in_microphone %}
+    <h4>Микрофон</h4>
+    <ul class="product__features-list">
+        <li>
+            <p class="feature__key">Встроенный микрофон</p>
+            <p class="feature__value">Да</p>
+        </li>
+    </ul>
+{% endif %}
+
+{% if product.active_noise_control or product.use_as_headset %}
+    <h4>Функции</h4>
+    <ul class="product__features-list">
+        {% if product.active_noise_control %}
+            <li>
+                <p class="feature__key">Система активного подавления шума</p>
+                <p class="feature__value">Да</p>
+            </li>
+        {% endif %}
+        {% if product.use_as_headset %}
+            <li>
+                <p class="feature__key">Использование в качестве гарнитуры</p>
+                <p class="feature__value">Да</p>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+{% if product.playback_control %}
+    <h4>Управление</h4>
+    <ul class="product__features-list">
+        <li>
+            <p class="feature__key">Управление воспроизведением</p>
+            <p class="feature__value">Да</p>
+        </li>
+    </ul>
+{% endif %}
+
+{% if product.wireless_charging or product.fast_charging %}
+    <h4>Зарядка</h4>
+    <ul class="product__features-list">
+        {% if product.wireless_charging %}
+            <li>
+                <p class="feature__key">Поддержка беспроводной зарядки</p>
+                <p class="feature__value">Да</p>
+            </li>
+        {% endif %}
+        {% if product.fast_charging %}
+            <li>
+                <p class="feature__key">Поддержка быстрой зарядки</p>
+                <p class="feature__value">Да</p>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+{% if product.charging_from_USB_port or product.battery_type or product.battery_capacity %}
+    <h4>Электропитание</h4>
+    <ul class="product__features-list">
+        {% if product.charging_from_USB_port %}
+            <li>
+                <p class="feature__key">Зарядка от USB порта</p>
+                <p class="feature__value">Да</p>
+            </li>
+        {% endif %}
+        {% if product.battery_type %}
+            <li>
+                <p class="feature__key">Тип аккумулятора</p>
+                <p class="feature__value">{{ product.battery_type }}</p>
+            </li>
+        {% endif %}
+        {% if product.battery_capacity %}
+            <li>
+                <p class="feature__key">Емкость аккумулятора</p>
+                <p class="feature__value">{{ product.battery_capacity }} мАч</p>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+<h4>Корпус</h4>
+<ul class="product__features-list">
+    <li>
+        <p class="feature__key">Корпус</p>
+        <p class="feature__value">
+            {% for material in product.body_materials.all %}
+                {{ material.title }}
+                {% if not forloop.last %}
+                    /
+                {% endif %}
+            {% endfor %}
+        </p>
+    </li>
+    {% if product.splashproof_body %}
+        <li>
+            <p class="feature__key">Брызгозащитный корпус</p>
+            <p class="feature__value">Да</p>
+        </li>
+    {% endif %}
+    <li>
+        <p class="feature__key">Цвет</p>
+        <p class="feature__value">{{ product.color }}</p>
+    </li>
+</ul>
+
+{% if product.charger or product.cable or product.ear_pads_pairs %}
+    <h4>Комплектация</h4>
+    <ul class="product__features-list">
+        {% if product.charger %}
+            <li>
+                <p class="feature__key">Блок питания</p>
+                <p class="feature__value">Да</p>
+            </li>
+        {% endif %}
+        {% if product.cable %}
+            <li>
+                <p class="feature__key">Кабель</p>
+                <p class="feature__value">
+                    {{ product.cable.to_gadget }} — {{ product.cable.to_charger }}
+                </p>
+            </li>
+        {% endif %}
+        {% if product.ear_pads_pairs %}
+            <li>
+                <p class="feature__key">Пар амбушюров в комплекте</p>
+                <p class="feature__value">{{ product.ear_pads_pairs }}</p>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+<h4>Вес</h4>
+<ul class="product__features-list">
+    <li>
+        <p class="feature__key">Вес</p>
+        <p class="feature__value">{{ product.weight }} г</p>
+    </li>
+</ul>
+{% endblock %}
