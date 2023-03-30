@@ -7,7 +7,15 @@
     <div class="navbar__menu">
         <ul>
             <li><a href="#">Главная</a></li>
-            <li><a href="#">Каталог</a></li>
+            <li>
+                <div class="dropdown">
+                    Каталог
+                    <div class="dropdown-content">
+                        <a href="{% url 'product_list' 'smartfony' %}">Смартфоны</a>
+                        <a href="{% url 'product_list' 'naushniki' %}">Наушники</a>
+                    </div>
+                </div>
+            </li>
             <li><a href="#">Новости</a></li>
             <li><a href="#">Контакты</a></li>
         </ul>
