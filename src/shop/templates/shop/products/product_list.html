@@ -6,63 +6,98 @@
 {% block content %}
 <section class="catalog">
     <div class="catalog__content">
-        <div class="catalog__goods">
-            <div class="catalog__cards">
-                <ul class="catalog__cards-list">
-                    {% for product in product_list %}
-                        <li>
-                            <a href="{{ product.get_absolute_url }}" class="catalog__card">
-                                <div class="item-img">
-                                    <img src="{{ product.image.url }}">
-                                </div>
-                                <h3 class="item-name">
-                                    {{ product }}
-                                </h3>
-                                <div class="item-price">
-                                    {% if product.discount_price %}
-                                        <p class="new-price">{{ product.discount_price.normalize|intcomma }} ₽</p>
-                                        <p class="old-price">{{ product.price.normalize|intcomma }} ₽</p>
-                                    {% else %}
-                                        <p class="new-price">{{ product.price.normalize|intcomma }} ₽</p>
-                                    {% endif %}
-                                </div>
-                                <div class="card__btn">
-                                    <form action="{% url 'cart_add' product.id %}" method="post">
-                                        {% csrf_token %}
-                                        <div style="display: none;">{{ cart_form }}</div>
-                                        <button type="submit" class="btn-buy">В корзину</button>
-                                    </form>
-                                </div>
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-                {% if page_obj.has_other_pages %}
-                    <ul class="catalog__pagination-list">
-                        {% if page_obj.has_previous %}
-                            <li class="pagination__item">
-                                <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+        <div class="catalog__filter">
+            <form action="{% url 'product_list' request.resolver_match.kwargs.category_slug %}" method="get">
+                <fieldset class="filter-item">
+                    <legend>Цена:</legend>
+                    <div class="price-controls">
+                        <input type="number" name="min-price" value="{{ min_price }}">
+                        &#8212;
+                        <input type="number" name="max-price" value="{{ max_price }}">
+                    </div>
+                </fieldset>
+                <fieldset class="filter-item">
+                    <legend>Бренды:</legend>
+                    <ul>
+                       {% for brand in brands %}
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="input-checkbox visually-hidden" name="brand"
+                                           value="{{ brand.slug }}"
+                                           {% if brand.slug in checked_brands %} checked {% endif %} >
+                                    <span class="checkbox" tabindex="0"></span>
+                                    {{ brand.title }}
+                                </label>
                             </li>
-                        {% endif %}
-                        {% for page_num in paginator.page_range %}
-                            {% if page_obj.number == page_num %}
-                                <li class="pagination__active">
-                                    <a href="#">{{ page_num }}</a>
-                                </li>
-                            {% else %}
+                        {% endfor %}
+                    </ul>
+                </fieldset>
+                <button type="submit" class="filter__btn">Показать</button>
+            </form>
+        </div>
+        <div class="catalog__goods">
+            {% if not product_list %}
+                <div class="notification">
+                    <h4 class="notification-title">Ничего не найдено</h4>
+                </div>
+            {% else %}
+                <div class="catalog__cards">
+                    <ul class="catalog__cards-list">
+                        {% for product in product_list %}
+                            <li>
+                                <a href="{{ product.get_absolute_url }}" class="catalog__card">
+                                    <div class="item-img">
+                                        <img src="{{ product.image.url }}">
+                                    </div>
+                                    <h3 class="item-name">
+                                        {{ product }}
+                                    </h3>
+                                    <div class="item-price">
+                                        {% if product.discount_price %}
+                                            <p class="new-price">{{ product.discount_price.normalize|intcomma }} ₽</p>
+                                            <p class="old-price">{{ product.price.normalize|intcomma }} ₽</p>
+                                        {% else %}
+                                            <p class="new-price">{{ product.price.normalize|intcomma }} ₽</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="card__btn">
+                                        <form action="{% url 'cart_add' product.id %}" method="post">
+                                            {% csrf_token %}
+                                            <div style="display: none;">{{ cart_form }}</div>
+                                            <button type="submit" class="btn-buy">В корзину</button>
+                                        </form>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% if page_obj.has_other_pages %}
+                        <ul class="catalog__pagination-list">
+                            {% if page_obj.has_previous %}
                                 <li class="pagination__item">
-                                    <a href="?page={{ page_num }}">{{ page_num }}</a>
+                                    <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
                                 </li>
                             {% endif %}
-                        {% endfor %}
-                        {% if page_obj.has_next %}
-                            <li class="pagination__item">
-                                <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                {% endif %}
-            </div>
+                            {% for page_num in paginator.page_range %}
+                                {% if page_obj.number == page_num %}
+                                    <li class="pagination__active">
+                                        <a href="#">{{ page_num }}</a>
+                                    </li>
+                                {% else %}
+                                    <li class="pagination__item">
+                                        <a href="?page={{ page_num }}">{{ page_num }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if page_obj.has_next %}
+                                <li class="pagination__item">
+                                    <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
     </div>
 </section>
