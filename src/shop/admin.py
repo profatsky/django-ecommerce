@@ -31,6 +31,7 @@ class FrontCameraInline(admin.StackedInline):
 class SmartPhoneAdmin(admin.ModelAdmin):
     list_display = ('brand', 'series', 'model', 'RAM', 'ROM', 'color', 'price', 'discount_price', 'units')
     list_display_links = ('brand', 'series')
+    list_editable = ('price', 'discount_price',)
     list_filter = ('brand', 'color',)
     search_fields = ('category', 'brand', 'series', 'model')
     date_hierarchy = 'created'
@@ -66,13 +67,13 @@ class SmartPhoneAdmin(admin.ModelAdmin):
     inlines = [MainCameraInline, FrontCameraInline]
 
     def save_model(self, request, obj, form, change):
-        cd = form.cleaned_data
         obj.slug = "-".join((
-            slugify(cd['brand']),
-            slugify(cd['series']),
-            slugify(cd['RAM']),
-            slugify(cd['ROM']),
-            slugify(translate(cd['color'].title))
+            slugify(obj.brand),
+            slugify(obj.series),
+            slugify(obj.model) if obj.model else '',
+            slugify(obj.RAM),
+            slugify(obj.ROM),
+            slugify(translate(obj.color.title))
         ))
         obj.save()
 
@@ -156,6 +157,7 @@ class BatteryTypeAdmin(admin.ModelAdmin):
 class HeadphonesAdmin(admin.ModelAdmin):
     list_display = ('brand', 'type', 'series', 'model', 'color', 'price', 'discount_price', 'units')
     list_display_links = ('brand', 'series')
+    list_editable = ('price', 'discount_price',)
     list_filter = ('brand', 'color', 'type', 'connection_type')
     search_fields = ('category', 'brand', 'series', 'model')
     date_hierarchy = 'created'
@@ -182,12 +184,11 @@ class HeadphonesAdmin(admin.ModelAdmin):
     )
 
     def save_model(self, request, obj, form, change):
-        cd = form.cleaned_data
         obj.slug = "-".join((
-            slugify(cd['brand']),
-            slugify(cd['series']),
-            slugify(cd['model']) if cd['model'] else '',
-            slugify(translate(cd['color'].title))
+            slugify(obj.brand),
+            slugify(obj.series),
+            slugify(obj.model) if obj.model else '',
+            slugify(translate(obj.color.title))
         ))
         obj.save()
 

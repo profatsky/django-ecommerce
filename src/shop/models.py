@@ -178,7 +178,7 @@ class ManufacturerCountry(models.Model):
 
 
 class OperatingSystem(models.Model):
-    title = models.CharField(max_length=30, verbose_name='Название')
+    title = models.CharField(max_length=50, verbose_name='Название')
 
     class Meta:
         verbose_name = 'Операционная система'
@@ -260,7 +260,7 @@ class SIMCard(models.Model):
 
 
 class DataTransmissionStandard(models.Model):
-    title = models.CharField(max_length=3, verbose_name='Название')
+    title = models.CharField(max_length=10, verbose_name='Название')
 
     class Meta:
         verbose_name = 'Стандарт передачи данных'

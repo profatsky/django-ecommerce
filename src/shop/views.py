@@ -8,7 +8,7 @@ from .models import Product, Brand
 class ProductListView(generic.ListView):
     template_name = 'shop/products/product_list.html'
     context_object_name = 'product_list'
-    paginate_by = 8
+    paginate_by = 9
 
     def get_queryset(self):
         queryset = Product.objects.select_subclasses().filter(category__slug=self.kwargs['category_slug'])
