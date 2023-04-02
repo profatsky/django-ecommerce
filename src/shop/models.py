@@ -252,8 +252,8 @@ class SIMCard(models.Model):
     title = models.CharField(max_length=20, verbose_name='Название')
 
     class Meta:
-        verbose_name = 'SIM карта смартфона'
-        verbose_name_plural = 'SIM карты смартфонов'
+        verbose_name = 'SIM карта'
+        verbose_name_plural = 'SIM карты'
 
     def __str__(self):
         return self.title
@@ -285,8 +285,8 @@ class GadgetBodyMaterial(models.Model):
     title = models.CharField(max_length=50, verbose_name='Название')
 
     class Meta:
-        verbose_name = 'Материал корпуса гаджета'
-        verbose_name_plural = 'Материал корпуса гаджета'
+        verbose_name = 'Материал корпуса'
+        verbose_name_plural = 'Материалы корпуса'
 
     def __str__(self):
         return self.title
@@ -296,8 +296,8 @@ class SmartPhoneBodyProtection(models.Model):
     title = models.CharField(max_length=10, verbose_name='Название')
 
     class Meta:
-        verbose_name = 'Степень защиты корпуса смартфона'
-        verbose_name_plural = 'Степень защиты корпуса смартфона'
+        verbose_name = 'Степень защиты корпуса'
+        verbose_name_plural = 'Степень защиты корпуса'
 
     def __str__(self):
         return self.title

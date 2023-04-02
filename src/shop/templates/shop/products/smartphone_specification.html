@@ -52,10 +52,12 @@
         <p class="feature__key">Технология экрана</p>
         <p class="feature__value">{{ product.screen_technology }}</p>
     </li>
-    <li>
-        <p class="feature__key">Частота обновления</p>
-        <p class="feature__value">{{ product.screen_refresh_rate.value }} Гц</p>
-    </li>
+    {% if product.screen_refresh_rate %}
+        <li>
+            <p class="feature__key">Частота обновления</p>
+            <p class="feature__value">{{ product.screen_refresh_rate }} Гц</p>
+        </li>
+    {% endif %}
 </ul>
 
 <h4>Процессор</h4>

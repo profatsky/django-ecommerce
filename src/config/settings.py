@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'admin_reorder',
 
     'shop',
     'cart',
@@ -60,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -172,3 +174,19 @@ Configuration.configure(
     BRAINTREE_PUBLIC_KEY,
     BRAINTREE_PRIVATE_KEY
 )
+
+
+# Model reorder in admin panel
+ADMIN_REORDER = [
+    {'app': 'shop', 'label': 'Магазин', 'models': ('shop.Category', 'shop.Brand', 'shop.ManufacturerCountry')},
+    {'app': 'shop', 'label': 'Смартфоны',
+     'models': ('shop.Smartphone', 'shop.OperatingSystem', 'shop.SmartPhoneCPU', 'shop.SmartPhoneUSBPort',
+                'shop.ScreenTechnology', 'shop.SmartPhoneMainCamera', 'shop.SmartPhoneFrontCamera', 'shop.SIMCard',
+                'shop.DataTransmissionStandard', 'shop.SmartPhoneSensor', 'shop.GadgetBodyMaterial',
+                'shop.SmartPhoneBodyProtection', 'shop.GadgetColor', 'shop.GadgetCable', 'shop.BatteryType')},
+    {'app': 'shop', 'label': 'Наушники',
+     'models': ('shop.Headphones', 'shop.HeadphonesConnectionType', 'shop.HeadphonesType', 'shop.GadgetBodyMaterial',
+                'shop.GadgetColor', 'shop.GadgetCable', 'shop.BatteryType')},
+    {'app': 'orders', 'models': ('orders.Order',)},
+    {'app': 'auth', 'models': ('auth.User', 'auth.Group')}
+]

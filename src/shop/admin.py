@@ -4,6 +4,8 @@ from django.utils.text import slugify
 from . import models
 from .utils import translate
 
+admin.site.site_header = 'Администрирование Интернет-магазина'
+
 
 @admin.register(models.Category)
 class CategoryAdmin(admin.ModelAdmin):
