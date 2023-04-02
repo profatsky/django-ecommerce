@@ -1,0 +1,2270 @@
+[
+{
+  "model": "shop.category",
+  "pk": 1,
+  "fields": {
+    "title": "Наушники",
+    "slug": "naushniki"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 2,
+  "fields": {
+    "title": "Смартфоны",
+    "slug": "smartfony"
+  }
+},
+{
+  "model": "shop.brand",
+  "pk": 1,
+  "fields": {
+    "title": "Apple",
+    "slug": "apple"
+  }
+},
+{
+  "model": "shop.brand",
+  "pk": 2,
+  "fields": {
+    "title": "Samsung",
+    "slug": "samsung"
+  }
+},
+{
+  "model": "shop.brand",
+  "pk": 3,
+  "fields": {
+    "title": "Realme",
+    "slug": "realme"
+  }
+},
+{
+  "model": "shop.brand",
+  "pk": 4,
+  "fields": {
+    "title": "Honor",
+    "slug": "honor"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "brand": 1,
+    "slug": "apple-airpods-airpods-2-belyj",
+    "image": "products/2023/04/02/airpods2.jpg",
+    "description": "Наушники Apple AirPods with Charging Case (MV7N2) синхронизируются с источником звука с помощью модуля Bluetooth версии 5 с дальностью действия до 45 м. Гарнитура обеспечивает быстрый доступ к голосовому помощнику Siri, поддерживает Live-прослушивание и быструю зарядку в футляре.\r\nЭта модель оборудована сдвоенными направленными микрофонами, передающими речь без помех и искажений. На корпусе расположены кнопки управления воспроизведением. На одном заряде аккумулятора наушники работают до 5 часов. В комплекте — кабель с коннекторами Apple Lightning — USB Type-A.",
+    "price": "11999.00",
+    "discount_price": null,
+    "units": 10,
+    "created": "2023-03-29T21:27:07.066Z",
+    "updated": "2023-04-02T12:47:19.429Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 2,
+  "fields": {
+    "category": 2,
+    "brand": 1,
+    "slug": "apple-iphone-13-mldv3-4-128-siausaa-zvezda",
+    "image": "products/2023/04/02/iphone-13-starlight.webp",
+    "description": "Смартфон Apple iPhone 13 128GB Starlight Dual Sim оснащен мощным шестиядерным процессором A15 Bionic, способным быстро обработать большое количество данных. За счет этого обеспечивается стабильно высокая производительность устройства, что необходимо для запуска ресурсоемких программ. Благодаря 4 Гб оперативной памяти модель характеризуется оптимальным уровнем быстродействия системы. Это поможет предотвратить возможное зависание устройства в режиме многозадачности. Модель способна продолжительное время автономно функционировать от встроенного аккумулятора с большим рабочим резервом.",
+    "price": "80999.00",
+    "discount_price": "68499.00",
+    "units": 3,
+    "created": "2023-03-30T17:28:34.841Z",
+    "updated": "2023-04-02T10:15:44.154Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 4,
+  "fields": {
+    "category": 2,
+    "brand": 1,
+    "slug": "apple-iphone-13-mldv3-4-128-goluboj",
+    "image": "products/2023/04/02/iphone-13-blue.webp",
+    "description": "iPhone 13. Сильный мира всего.\r\n\r\niPhone 13. Самая совершенная система двух камер на iPhone. Режим «Киноэффект» делает из видео настоящее кино. Супербыстрый чип A15 Bionic. Неутомимый аккумулятор. Прочный корпус. И ещё более яркий дисплей Super Retina XDR.",
+    "price": "80999.00",
+    "discount_price": "68499.00",
+    "units": 2,
+    "created": "2023-03-30T17:31:13.015Z",
+    "updated": "2023-04-02T10:16:18.391Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 5,
+  "fields": {
+    "category": 2,
+    "brand": 1,
+    "slug": "apple-iphone-13-mldv3-4-128-rozovyj",
+    "image": "products/2023/04/02/iphone-13-pink.webp",
+    "description": "iPhone 13. Сильный мира всего.\r\n\r\niPhone 13. Самая совершенная система двух камер на iPhone. Режим «Киноэффект» делает из видео настоящее кино. Супербыстрый чип A15 Bionic. Неутомимый аккумулятор. Прочный корпус. И ещё более яркий дисплей Super Retina XDR.",
+    "price": "80999.00",
+    "discount_price": "68499.00",
+    "units": 4,
+    "created": "2023-03-30T17:32:51.206Z",
+    "updated": "2023-04-02T10:16:30.681Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 6,
+  "fields": {
+    "category": 2,
+    "brand": 2,
+    "slug": "samsung-galaxy-s23-sm-s911-8-256-cernyj",
+    "image": "products/2023/04/02/samsung-galaxy-s23-phantom-black.webp",
+    "description": "Смартфон Samsung Galaxy S23 Black — модель с безрамочным экраном диагональю 6,1 дюйма, выполненным по технологии Dynamic AMOLED 2X. Разрешение — 2400x1080 пикселей, частота обновления — 120 Гц. Отображается 16 млн цветов. Надежную защиту дисплея обеспечивает стекло Corning Gorilla Glass 8.\r\nВысокую производительность девайса гарантируют восьмиядерный процессор Qualcomm Snapdragon 8 Gen 2 и 8 Гб оперативной памяти. Для установки приложений, хранения изображений, музыки видео и документов используется хранилище объемом 256 Гб.\r\nВ устройство можно установить две nano-SIM, кроме того, поддерживается eSIM. Смартфон работает в сетях вплоть до 5G. Навигационные системы GPS, ГЛОНАСС, Beidou, Galileo и QZSS дадут возможность быстро сориентироваться в незнакомом месте, проложить кратчайший маршрут до нужной точки. Встроенные модули Wi-Fi 802.11 a/b/g/n/ac/ax и Bluetooth 5.3 обеспечивают доступ в Сеть и позволяют обмениваться данными с совместимыми устройствами. Авторизация может производиться на основе отпечатка пальца (сенсор расположен под экраном) и распознавания лица.\r\nОсновная камера представлена тройным модулем разрешением 50 Мп, 10 Мп и 12 Мп. Установлена оптическая система стабилизации, приблизить объекты можно при помощи оптического (3Х) и цифрового зума (до 30Х). Фронтальная камера на 12 Мп оснащена автофокусом для создания эффектных автопортретов.\r\nСмартфон оснащен аккумулятором емкостью 3900 мА*ч. Он предоставляет до 35 часов автономной работы в режиме разговора и поддерживает беспроводную и быструю зарядку. Интерфейс подключения — USB Type-C. При производстве корпуса используются металл, стекло и пластик, стандарт защиты от влаги и пыли — IP68. Размеры модели: 146,3х70,9х7,6 мм, вес — 168 г.",
+    "price": "79999.00",
+    "discount_price": null,
+    "units": 7,
+    "created": "2023-03-30T17:50:37.584Z",
+    "updated": "2023-04-02T10:19:11.327Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 7,
+  "fields": {
+    "category": 2,
+    "brand": 2,
+    "slug": "samsung-galaxy-s23-sm-s911-8-256-zelenyj",
+    "image": "products/2023/04/02/samsung-galaxy-s23-green.webp",
+    "description": "Смартфон Samsung Galaxy S23 Green — модель с безрамочным экраном диагональю 6,1 дюйма, выполненным по технологии Dynamic AMOLED 2X. Разрешение — 2400x1080 пикселей, частота обновления — 120 Гц. Отображается 16 млн цветов. Надежную защиту дисплея обеспечивает стекло Corning Gorilla Glass 8.\r\nВысокую производительность девайса гарантируют восьмиядерный процессор Qualcomm Snapdragon 8 Gen 2 и 8 Гб оперативной памяти. Для установки приложений, хранения изображений, музыки видео и документов используется хранилище объемом 256 Гб.\r\nВ устройство можно установить две nano-SIM, кроме того, поддерживается eSIM. Смартфон работает в сетях вплоть до 5G. Навигационные системы GPS, ГЛОНАСС, Beidou, Galileo и QZSS дадут возможность быстро сориентироваться в незнакомом месте, проложить кратчайший маршрут до нужной точки. Встроенные модули Wi-Fi 802.11 a/b/g/n/ac/ax и Bluetooth 5.3 обеспечивают доступ в Сеть и позволяют обмениваться данными с совместимыми устройствами. Авторизация может производиться на основе отпечатка пальца (сенсор расположен под экраном) и распознавания лица.\r\nОсновная камера представлена тройным модулем разрешением 50 Мп, 10 Мп и 12 Мп. Установлена оптическая система стабилизации, приблизить объекты можно при помощи оптического (3Х) и цифрового зума (до 30Х). Фронтальная камера на 12 Мп оснащена автофокусом для создания эффектных автопортретов.\r\nСмартфон оснащен аккумулятором емкостью 3900 мА*ч. Он предоставляет до 35 часов автономной работы в режиме разговора и поддерживает беспроводную и быструю зарядку. Интерфейс подключения — USB Type-C. При производстве корпуса используются металл, стекло и пластик, стандарт защиты от влаги и пыли — IP68. Размеры модели: 146,3х70,9х7,6 мм, вес — 168 г.",
+    "price": "79999.00",
+    "discount_price": null,
+    "units": 8,
+    "created": "2023-03-30T18:03:30.549Z",
+    "updated": "2023-04-02T10:19:21.088Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 8,
+  "fields": {
+    "category": 1,
+    "brand": 3,
+    "slug": "realme-buds-air-3-rma2105-sinij",
+    "image": "products/2023/04/02/realme-buds-air-3.webp",
+    "description": "Наушники True Wireless Realme Buds Air 3 в цветовом решении Starry Blue защищены по стандарту IPX6. Гаджет питается от аккумулятора емкостью 460 мА*ч, одного заряда которого достаточно для 7 часов в режиме функционирования. Модель поддерживает быструю зарядку через Type-C-разъем.\r\nУстройство получило встроенный микрофон с системой подавления окружающего шума. Диаметр динамика — 1 см. Наушники синхронизируются со смартфоном благодаря встроенному модулю Bluetooth 5.2. Есть поддержка подключения сразу к двум мобильным телефонам.",
+    "price": "7999.00",
+    "discount_price": null,
+    "units": 6,
+    "created": "2023-03-30T18:45:21.892Z",
+    "updated": "2023-04-02T10:11:37.209Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 9,
+  "fields": {
+    "category": 2,
+    "brand": 4,
+    "slug": "honor-70-fne-nx9-8-128-zelenyj",
+    "image": "products/2023/04/02/honor-70-emerald-green.jpg",
+    "description": "Смартфон Honor 70 в стеклянном корпусе цвета Emerald Green работает на операционной системе Android Magic UI 6.1. Быстродействие и высокую производительность обеспечивают 8 Гб оперативной памяти и восьмиядерный процессор Qualcomm Snapdragon 778G Plus 5G. Объем внутренней памяти — 128 Гб.\r\nДевайс снабжен встроенным литий-ионным аккумулятором емкостью 4800 мА*ч. В режиме разговора ресурса хватает на 36 часов. Батарея поддерживает функцию быстрой зарядки HONOR SuperCharge 66 Вт. Чтобы восполнить энергию на 60%, потребуется всего 20 минут.\r\nЭта модель оснащена безрамочным иммерсионным дисплеем диагональю 6,67 дюйма. Он создан на базе матрицы OLED, обладает частотой обновления 120 Гц, транслирует четкое детализированное изображение разрешением 2400x1080 пикселей, поддерживает 1,07 млрд цветов.\r\nУстройство оборудовано профессиональной тройной основной камерой (54 Мп, 50 Мп, 2 Мп). Она обладает большой диафрагмой, автофокусом, цифровым стабилизатором и вспышкой. Для создания селфи есть фронтальный модуль разрешением 32 Мп.\r\nЭта модель поддерживает использование двух SIM-карт формата nano. К интернету можно подключаться через Wi-Fi-соединение или мобильные сети любых стандартов, в том числе 5G. В этой модели реализованы беспроводные технологии NFC и Bluetooth. Есть сканер отпечатка пальца и сенсор распознавания лица.\r\nДля подключения к сетевому адаптеру используется порт USB Type-C. В комплекте — блок питания, кабель, защитная пленка для экрана. Размеры — 16,14х7,33х0,791 см, вес — 178 г.",
+    "price": "35999.00",
+    "discount_price": "39999.00",
+    "units": 4,
+    "created": "2023-04-01T12:43:58.495Z",
+    "updated": "2023-04-02T10:18:32.280Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 10,
+  "fields": {
+    "category": 2,
+    "brand": 4,
+    "slug": "honor-70-fne-nx9-8-256-cernyj",
+    "image": "products/2023/04/02/honor-70-black.webp",
+    "description": "Смартфон Honor 70 в стеклянном корпусе цвета Midnight Black работает на операционной системе Android Magic UI 6.1. Быстродействие и высокую производительность обеспечивают 8 Гб оперативной памяти и восьмиядерный процессор Qualcomm Snapdragon 778G Plus 5G. Объем внутренней памяти — 256 Гб.\r\nДевайс снабжен встроенным литий-ионным аккумулятором емкостью 4800 мА*ч. В режиме разговора ресурса хватает на 36 часов. Батарея поддерживает функцию быстрой зарядки HONOR SuperCharge 66 Вт. Чтобы восполнить энергию на 60%, потребуется всего 20 минут.\r\nЭта модель оснащена безрамочным иммерсионным дисплеем диагональю 6,67 дюйма. Он создан на базе матрицы OLED, обладает частотой обновления 120 Гц, транслирует четкое детализированное изображение разрешением 2400x1080 пикселей, поддерживает 1,07 млрд цветов.\r\nУстройство оборудовано профессиональной тройной основной камерой (54 Мп, 50 Мп, 2 Мп). Она обладает большой диафрагмой, автофокусом, цифровым стабилизатором и вспышкой. Для создания селфи есть фронтальный модуль разрешением 32 Мп.\r\nЭта модель поддерживает использование двух SIM-карт формата nano. К интернету можно подключаться через Wi-Fi-соединение или мобильные сети любых стандартов, в том числе 5G. В этой модели реализованы беспроводные технологии NFC и Bluetooth. Есть сканер отпечатка пальца и сенсор распознавания лица.\r\nДля подключения к сетевому адаптеру используется порт USB Type-C. В комплекте — блок питания, кабель, защитная пленка для экрана. Размеры — 16,14х7,33х0,791 см, вес — 178 г.",
+    "price": "44999.00",
+    "discount_price": "40499.00",
+    "units": 5,
+    "created": "2023-04-01T12:45:31.115Z",
+    "updated": "2023-04-02T10:18:48.428Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 11,
+  "fields": {
+    "category": 2,
+    "brand": 4,
+    "slug": "honor-70-fne-nx9-8-256-serebristyj",
+    "image": "products/2023/04/02/honor-70-silver_kntDDHM.jpg",
+    "description": "Смартфон Honor 70 в стеклянном корпусе цвета Crystall Silver работает на операционной системе Android Magic UI 6.1. Быстродействие и высокую производительность обеспечивают 8 Гб оперативной памяти и восьмиядерный процессор Qualcomm Snapdragon 778G Plus 5G. Объем внутренней памяти — 256 Гб.\r\nДевайс снабжен встроенным литий-ионным аккумулятором емкостью 4800 мА*ч. В режиме разговора ресурса хватает на 36 часов. Батарея поддерживает функцию быстрой зарядки HONOR SuperCharge 66 Вт. Чтобы восполнить энергию на 60%, потребуется всего 20 минут.\r\nЭта модель оснащена безрамочным иммерсионным дисплеем диагональю 6,67 дюйма. Он создан на базе матрицы OLED, обладает частотой обновления 120 Гц, транслирует четкое детализированное изображение разрешением 2400x1080 пикселей, поддерживает 1,07 млрд цветов.\r\nУстройство оборудовано профессиональной тройной основной камерой (54 Мп, 50 Мп, 2 Мп). Она обладает большой диафрагмой, автофокусом, цифровым стабилизатором и вспышкой. Для создания селфи есть фронтальный модуль разрешением 32 Мп.\r\nЭта модель поддерживает использование двух SIM-карт формата nano. К интернету можно подключаться через Wi-Fi-соединение или мобильные сети любых стандартов, в том числе 5G. В этой модели реализованы беспроводные технологии NFC и Bluetooth. Есть сканер отпечатка пальца и сенсор распознавания лица.\r\nДля подключения к сетевому адаптеру используется порт USB Type-C. В комплекте — блок питания, кабель, защитная пленка для экрана. Размеры — 16,14х7,33х0,791 см, вес — 178 г.",
+    "price": "44999.00",
+    "discount_price": "40499.00",
+    "units": 3,
+    "created": "2023-04-01T12:47:10.699Z",
+    "updated": "2023-04-02T10:18:54.380Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 12,
+  "fields": {
+    "category": 2,
+    "brand": 4,
+    "slug": "honor-70-fne-nx9-8-128-serebristyj",
+    "image": "products/2023/04/02/honor-70-silver.jpg",
+    "description": "Смартфон Honor 70 в стеклянном корпусе цвета Crystall Silver работает на операционной системе Android Magic UI 6.1. Быстродействие и высокую производительность обеспечивают 8 Гб оперативной памяти и восьмиядерный процессор Qualcomm Snapdragon 778G Plus 5G. Объем внутренней памяти — 128 Гб.\r\nДевайс снабжен встроенным литий-ионным аккумулятором емкостью 4800 мА*ч. В режиме разговора ресурса хватает на 36 часов. Батарея поддерживает функцию быстрой зарядки HONOR SuperCharge 66 Вт. Чтобы восполнить энергию на 60%, потребуется всего 20 минут.\r\nЭта модель оснащена безрамочным иммерсионным дисплеем диагональю 6,67 дюйма. Он создан на базе матрицы OLED, обладает частотой обновления 120 Гц, транслирует четкое детализированное изображение разрешением 2400x1080 пикселей, поддерживает 1,07 млрд цветов.\r\nУстройство оборудовано профессиональной тройной основной камерой (54 Мп, 50 Мп, 2 Мп). Она обладает большой диафрагмой, автофокусом, цифровым стабилизатором и вспышкой. Для создания селфи есть фронтальный модуль разрешением 32 Мп.\r\nЭта модель поддерживает использование двух SIM-карт формата nano. К интернету можно подключаться через Wi-Fi-соединение или мобильные сети любых стандартов, в том числе 5G. В этой модели реализованы беспроводные технологии NFC и Bluetooth. Есть сканер отпечатка пальца и сенсор распознавания лица.\r\nДля подключения к сетевому адаптеру используется порт USB Type-C. В комплекте — блок питания, кабель, защитная пленка для экрана. Размеры — 16,14х7,33х0,791 см, вес — 178 г.",
+    "price": "39999.00",
+    "discount_price": "35999.00",
+    "units": 5,
+    "created": "2023-04-01T12:47:45.632Z",
+    "updated": "2023-04-02T10:18:41.954Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 13,
+  "fields": {
+    "category": 2,
+    "brand": 1,
+    "slug": "apple-iphone-14-pro-max--6-256-zolotistyj",
+    "image": "products/2023/04/02/iphone-14-pro-max-gold.webp",
+    "description": "iPhone 14 Pro Max — смартфон в корпусе цвета Gold, выполненном из нержавеющей стали и противоударного стекла Ceramic Shield, обладает встроенной памятью 256 Гб. Благодаря классу защиты от воды и пыли IP68 устройство не пострадает при погружении на глубину до 6 м. Экран типа Super Retina XDR Pro Motion диагональю 6,7 дюйма сделан по технологии OLED.\r\nЭта модель оборудована тремя основными и одной фронтальной камерой. Основной объектив защищен от повреждений сапфировым стеклом. Модули позволяют записывать видео в качестве 4К, фотографировать с 15-кратным приближением и двукратным удалением. Питание обеспечивает литий-ионный аккумулятор, подпитывать его можно через компьютер, сетевой адаптер или при помощи док-станции MagSafe с функцией Qi. Ресурса батареи хватает на 29 часов просмотра видеоконтента и 95 часов прослушивания музыки.\r\nЗа производительность отвечает шестиядерный процессор A16 Bionic. Девайс снабжен слотом для SIM-карты формата nano. Он поддерживает все существующие мобильные стандарты (в том числе 5G). Устройство обладает модулями беспроводной передачи данных NFC, Bluetooth 5.3 и Wi-Fi. Размеры смартфона — 160,7х77,6х7,85 см, вес — 240 г.",
+    "price": "140999.00",
+    "discount_price": "125999.00",
+    "units": 3,
+    "created": "2023-04-01T12:57:28.183Z",
+    "updated": "2023-04-02T10:18:24.196Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 14,
+  "fields": {
+    "category": 2,
+    "brand": 1,
+    "slug": "apple-iphone-14-pro--6-128-temno-fioletovyj",
+    "image": "products/2023/04/02/iphone-14-pro-purple.webp",
+    "description": "Смартфон iPhone 14 Pro в корпусе цвета Deep Purple со встроенной памятью объемом 128 Гб оборудован OLED-дисплеем диагональю 6,1 дюйма с адаптивной частотой обновления до 120 Гц. В этой модели установлены три основные камеры (48 Мп, 12 Мп и 12 Мп) и фронтальный модуль (7 Мп), можно записывать видео в качестве 4К с частотой 30 кадров в секунду. Основной широкоугольный объектив снабжен сапфировым защитным стеклом.\r\nПитание обеспечивает литий-ионный аккумулятор с поддержкой беспроводной зарядки MagSafe и стандарта Qi. Ресурса хватает на 75 часов воспроизведения аудиофайлов и 23 часа просмотра видео. В комплекте есть кабель с коннекторами Lightning и USB Type-C. Смартфон оборудован шестиядерным процессором A16 Bionic.\r\nКорпус выполнен из нержавеющей стали, обладает классом влагозащиты IP68. Устройство не боится погружения на глубину до 6 м. Дисплей оснащен противоударным стеклом Ceramic Shield. В этой модели используется SIM-карта формата nano, девайс поддерживает мобильные стандарты передачи данных вплоть до 5G. В нем реализованы беспроводные технологии NFC, Bluetooth 5.3, есть модуль Wi-Fi. За навигацию отвечают GPS, ГЛОНАСС, цифровой компас, встроенный барометр и датчик ориентации экрана. Габариты смартфона — 147,5х71,5х7,85 см, вес — 206 г.",
+    "price": "119999.00",
+    "discount_price": "107999.00",
+    "units": 3,
+    "created": "2023-04-01T13:05:09.094Z",
+    "updated": "2023-04-02T10:17:01.069Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 15,
+  "fields": {
+    "category": 2,
+    "brand": 1,
+    "slug": "apple-iphone-14-pro--6-256-temno-fioletovyj",
+    "image": "products/2023/04/02/iphone-14-pro-purple_798cs4X.webp",
+    "description": "Смартфон iPhone 14 Pro в корпусе цвета Deep Purple со встроенной памятью объемом 256 Гб оборудован OLED-дисплеем диагональю 6,1 дюйма с адаптивной частотой обновления до 120 Гц. В этой модели установлены три основные камеры (48 Мп, 12 Мп и 12 Мп) и фронтальный модуль (7 Мп), можно записывать видео в качестве 4К с частотой 30 кадров в секунду. Основной широкоугольный объектив снабжен сапфировым защитным стеклом.\r\nПитание обеспечивает литий-ионный аккумулятор с поддержкой беспроводной зарядки MagSafe и стандарта Qi. Ресурса хватает на 75 часов воспроизведения аудиофайлов и 23 часа просмотра видео. В комплекте есть кабель с коннекторами Lightning и USB Type-C. Смартфон оборудован шестиядерным процессором A16 Bionic.\r\nКорпус выполнен из нержавеющей стали, обладает классом влагозащиты IP68. Устройство не боится погружения на глубину до 6 м. Дисплей оснащен противоударным стеклом Ceramic Shield. В этой модели используется SIM-карта формата nano, девайс поддерживает мобильные стандарты передачи данных вплоть до 5G. В нем реализованы беспроводные технологии NFC, Bluetooth 5.3, есть модуль Wi-Fi. За навигацию отвечают GPS, ГЛОНАСС, цифровой компас, встроенный барометр и датчик ориентации экрана. Габариты смартфона — 147,5х71,5х7,85 см, вес — 206 г.",
+    "price": "129999.00",
+    "discount_price": "116999.00",
+    "units": 5,
+    "created": "2023-04-01T13:05:45.549Z",
+    "updated": "2023-04-02T10:17:55.544Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 16,
+  "fields": {
+    "category": 2,
+    "brand": 1,
+    "slug": "apple-iphone-14-pro--6-256-serebristyj",
+    "image": "products/2023/04/02/iphone-14-pro-silver_XdOi5Pw.webp",
+    "description": "Смартфон iPhone 14 Pro в корпусе цвета Deep Purple со встроенной памятью объемом 256 Гб оборудован OLED-дисплеем диагональю 6,1 дюйма с адаптивной частотой обновления до 120 Гц. В этой модели установлены три основные камеры (48 Мп, 12 Мп и 12 Мп) и фронтальный модуль (7 Мп), можно записывать видео в качестве 4К с частотой 30 кадров в секунду. Основной широкоугольный объектив снабжен сапфировым защитным стеклом.\r\nПитание обеспечивает литий-ионный аккумулятор с поддержкой беспроводной зарядки MagSafe и стандарта Qi. Ресурса хватает на 75 часов воспроизведения аудиофайлов и 23 часа просмотра видео. В комплекте есть кабель с коннекторами Lightning и USB Type-C. Смартфон оборудован шестиядерным процессором A16 Bionic.\r\nКорпус выполнен из нержавеющей стали, обладает классом влагозащиты IP68. Устройство не боится погружения на глубину до 6 м. Дисплей оснащен противоударным стеклом Ceramic Shield. В этой модели используется SIM-карта формата nano, девайс поддерживает мобильные стандарты передачи данных вплоть до 5G. В нем реализованы беспроводные технологии NFC, Bluetooth 5.3, есть модуль Wi-Fi. За навигацию отвечают GPS, ГЛОНАСС, цифровой компас, встроенный барометр и датчик ориентации экрана. Габариты смартфона — 147,5х71,5х7,85 см, вес — 206 г.",
+    "price": "129999.00",
+    "discount_price": "116999.00",
+    "units": 5,
+    "created": "2023-04-01T13:06:50.480Z",
+    "updated": "2023-04-02T10:17:42.111Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 17,
+  "fields": {
+    "category": 2,
+    "brand": 1,
+    "slug": "apple-iphone-14-pro--6-512-serebristyj",
+    "image": "products/2023/04/02/iphone-14-pro-silver_KgCDqlB.webp",
+    "description": "Смартфон iPhone 14 Pro в корпусе цвета Silver со встроенной памятью объемом 512 Гб оборудован OLED-дисплеем диагональю 6,1 дюйма с адаптивной частотой обновления до 120 Гц. В этой модели установлены три основные камеры (48 Мп, 12 Мп и 12 Мп) и фронтальный модуль (7 Мп), можно записывать видео в качестве 4К с частотой 30 кадров в секунду. Основной широкоугольный объектив снабжен сапфировым защитным стеклом.\r\nПитание обеспечивает литий-ионный аккумулятор с поддержкой беспроводной зарядки MagSafe и стандарта Qi. Ресурса хватает на 75 часов воспроизведения аудиофайлов и 23 часа просмотра видео. В комплекте есть кабель с коннекторами Lightning и USB Type-C. Смартфон оборудован шестиядерным процессором A16 Bionic.\r\nКорпус выполнен из нержавеющей стали, обладает классом влагозащиты IP68. Устройство не боится погружения на глубину до 6 м. Дисплей оснащен противоударным стеклом Ceramic Shield. В этой модели используется SIM-карта формата nano, девайс поддерживает мобильные стандарты передачи данных вплоть до 5G. В нем реализованы беспроводные технологии NFC, Bluetooth 5.3, есть модуль Wi-Fi. За навигацию отвечают GPS, ГЛОНАСС, цифровой компас, встроенный барометр и датчик ориентации экрана. Габариты смартфона — 147,5х71,5х7,85 см, вес — 206 г.",
+    "price": "149999.00",
+    "discount_price": "140999.00",
+    "units": 6,
+    "created": "2023-04-01T13:07:26.660Z",
+    "updated": "2023-04-02T10:18:15.904Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 18,
+  "fields": {
+    "category": 2,
+    "brand": 1,
+    "slug": "apple-iphone-14-pro--6-512-cernyj",
+    "image": "products/2023/04/02/iphone-14-pro-black.webp",
+    "description": "Смартфон iPhone 14 Pro в корпусе цвета Space Black со встроенной памятью объемом 512 Гб оборудован OLED-дисплеем диагональю 6,1 дюйма с адаптивной частотой обновления до 120 Гц. В этой модели установлены три основные камеры (48 Мп, 12 Мп и 12 Мп) и фронтальный модуль (7 Мп), можно записывать видео в качестве 4К с частотой 30 кадров в секунду. Основной широкоугольный объектив снабжен сапфировым защитным стеклом.\r\nПитание обеспечивает литий-ионный аккумулятор с поддержкой беспроводной зарядки MagSafe и стандарта Qi. Ресурса хватает на 75 часов воспроизведения аудиофайлов и 23 часа просмотра видео. В комплекте есть кабель с коннекторами Lightning и USB Type-C. Смартфон оборудован шестиядерным процессором A16 Bionic.\r\nКорпус выполнен из нержавеющей стали, обладает классом влагозащиты IP68. Устройство не боится погружения на глубину до 6 м. Дисплей оснащен противоударным стеклом Ceramic Shield. В этой модели используется SIM-карта формата nano, девайс поддерживает мобильные стандарты передачи данных вплоть до 5G. В нем реализованы беспроводные технологии NFC, Bluetooth 5.3, есть модуль Wi-Fi. За навигацию отвечают GPS, ГЛОНАСС, цифровой компас, встроенный барометр и датчик ориентации экрана. Габариты смартфона — 147,5х71,5х7,85 см, вес — 206 г.",
+    "price": "149999.00",
+    "discount_price": "140999.00",
+    "units": 6,
+    "created": "2023-04-01T13:08:25.864Z",
+    "updated": "2023-04-02T10:18:07.334Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 19,
+  "fields": {
+    "category": 2,
+    "brand": 1,
+    "slug": "apple-iphone-14-pro--6-128-zolotistyj",
+    "image": "products/2023/04/02/iphone-14-pro-gold.webp",
+    "description": "Смартфон iPhone 14 Pro в корпусе цвета Gold со встроенной памятью объемом 128 Гб оборудован OLED-дисплеем диагональю 6,1 дюйма с адаптивной частотой обновления до 120 Гц. В этой модели установлены три основные камеры (48 Мп, 12 Мп и 12 Мп) и фронтальный модуль (7 Мп), можно записывать видео в качестве 4К с частотой 30 кадров в секунду. Основной широкоугольный объектив снабжен сапфировым защитным стеклом.\r\nПитание обеспечивает литий-ионный аккумулятор с поддержкой беспроводной зарядки MagSafe и стандарта Qi. Ресурса хватает на 75 часов воспроизведения аудиофайлов и 23 часа просмотра видео. В комплекте есть кабель с коннекторами Lightning и USB Type-C. Смартфон оборудован шестиядерным процессором A16 Bionic.\r\nКорпус выполнен из нержавеющей стали, обладает классом влагозащиты IP68. Устройство не боится погружения на глубину до 6 м. Дисплей оснащен противоударным стеклом Ceramic Shield. В этой модели используется SIM-карта формата nano, девайс поддерживает мобильные стандарты передачи данных вплоть до 5G. В нем реализованы беспроводные технологии NFC, Bluetooth 5.3, есть модуль Wi-Fi. За навигацию отвечают GPS, ГЛОНАСС, цифровой компас, встроенный барометр и датчик ориентации экрана. Габариты смартфона — 147,5х71,5х7,85 см, вес — 206 г.",
+    "price": "119999.00",
+    "discount_price": "104999.00",
+    "units": 4,
+    "created": "2023-04-01T13:10:05.907Z",
+    "updated": "2023-04-02T10:16:45.036Z"
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 2,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "iPhone 13",
+    "model": "MLDV3",
+    "operating_system": 1,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2532,
+    "screen_resolution_horizontal": 1170,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 2,
+    "RAM": 4,
+    "ROM": 128,
+    "number_of_main_cameras": 2,
+    "optical_stabilization": true,
+    "digital_stabilization": false,
+    "LiDAR_scanner": false,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 1,
+    "NFC": true,
+    "bluetooth_module": "5.0",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": false,
+    "USB_port": 1,
+    "protection_degree": 1,
+    "color": 2,
+    "charger_power": 20,
+    "battery_type": 2,
+    "battery_capacity": 3227,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 2,
+    "weight": 173,
+    "width": "71.50",
+    "height": "146.70",
+    "depth": "7.65",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2
+    ],
+    "body_materials": [
+      2,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 4,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "iPhone 13",
+    "model": "MLDV3",
+    "operating_system": 1,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2532,
+    "screen_resolution_horizontal": 1170,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 2,
+    "RAM": 4,
+    "ROM": 128,
+    "number_of_main_cameras": 2,
+    "optical_stabilization": true,
+    "digital_stabilization": false,
+    "LiDAR_scanner": false,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 1,
+    "NFC": true,
+    "bluetooth_module": "5.0",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": false,
+    "USB_port": 1,
+    "protection_degree": 1,
+    "color": 3,
+    "charger_power": 20,
+    "battery_type": 2,
+    "battery_capacity": 3227,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 2,
+    "weight": 173,
+    "width": "71.50",
+    "height": "146.70",
+    "depth": "7.65",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2
+    ],
+    "body_materials": [
+      2,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 5,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "iPhone 13",
+    "model": "MLDV3",
+    "operating_system": 1,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2532,
+    "screen_resolution_horizontal": 1170,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 2,
+    "RAM": 4,
+    "ROM": 128,
+    "number_of_main_cameras": 2,
+    "optical_stabilization": true,
+    "digital_stabilization": false,
+    "LiDAR_scanner": false,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 1,
+    "NFC": true,
+    "bluetooth_module": "5.0",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": false,
+    "USB_port": 1,
+    "protection_degree": 1,
+    "color": 4,
+    "charger_power": 20,
+    "battery_type": 2,
+    "battery_capacity": 3227,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 2,
+    "weight": 173,
+    "width": "71.50",
+    "height": "146.70",
+    "depth": "7.65",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2
+    ],
+    "body_materials": [
+      2,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 6,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 2,
+    "series": "Galaxy S23",
+    "model": "SM-S911",
+    "operating_system": 2,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2340,
+    "screen_resolution_horizontal": 1080,
+    "screen_technology": 2,
+    "screen_refresh_rate": 60,
+    "CPU": 3,
+    "RAM": 8,
+    "ROM": 256,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": true,
+    "digital_stabilization": true,
+    "LiDAR_scanner": false,
+    "video_resolution_horizontal": 7680,
+    "video_resolution_vertical": 4320,
+    "number_of_front_cameras": 1,
+    "SIM_card": 2,
+    "NFC": true,
+    "bluetooth_module": "5.3",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": true,
+    "USB_port": 2,
+    "protection_degree": 1,
+    "color": 5,
+    "charger_power": 20,
+    "battery_type": 1,
+    "battery_capacity": 3900,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 3,
+    "weight": 168,
+    "width": "70.90",
+    "height": "146.30",
+    "depth": "7.60",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "body_materials": [
+      1,
+      3,
+      5
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 7,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 2,
+    "series": "Galaxy S23",
+    "model": "SM-S911",
+    "operating_system": 2,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2340,
+    "screen_resolution_horizontal": 1080,
+    "screen_technology": 2,
+    "screen_refresh_rate": 60,
+    "CPU": 3,
+    "RAM": 8,
+    "ROM": 256,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": true,
+    "digital_stabilization": true,
+    "LiDAR_scanner": false,
+    "video_resolution_horizontal": 7680,
+    "video_resolution_vertical": 4320,
+    "number_of_front_cameras": 1,
+    "SIM_card": 2,
+    "NFC": true,
+    "bluetooth_module": "5.3",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": true,
+    "USB_port": 2,
+    "protection_degree": 1,
+    "color": 6,
+    "charger_power": 20,
+    "battery_type": 1,
+    "battery_capacity": 3900,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 3,
+    "weight": 168,
+    "width": "70.90",
+    "height": "146.30",
+    "depth": "7.60",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "body_materials": [
+      1,
+      3,
+      5
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 9,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "70",
+    "model": "FNE-NX9",
+    "operating_system": 3,
+    "screen_diagonal": "6.67",
+    "screen_resolution_vertical": 2400,
+    "screen_resolution_horizontal": 1080,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 4,
+    "RAM": 8,
+    "ROM": 128,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": false,
+    "digital_stabilization": true,
+    "LiDAR_scanner": false,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 1,
+    "NFC": true,
+    "bluetooth_module": "5.2",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": true,
+    "USB_port": 2,
+    "protection_degree": null,
+    "color": 6,
+    "charger_power": 66,
+    "battery_type": 3,
+    "battery_capacity": 4800,
+    "wireless_charging": false,
+    "fast_charging": true,
+    "charger": true,
+    "screen_protector": true,
+    "cable": 3,
+    "weight": 178,
+    "width": "73.30",
+    "height": "161.40",
+    "depth": "7.91",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      2,
+      3,
+      5
+    ],
+    "body_materials": [
+      3
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 10,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "70",
+    "model": "FNE-NX9",
+    "operating_system": 3,
+    "screen_diagonal": "6.67",
+    "screen_resolution_vertical": 2400,
+    "screen_resolution_horizontal": 1080,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 4,
+    "RAM": 8,
+    "ROM": 256,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": false,
+    "digital_stabilization": true,
+    "LiDAR_scanner": false,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 1,
+    "NFC": true,
+    "bluetooth_module": "5.2",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": true,
+    "USB_port": 2,
+    "protection_degree": null,
+    "color": 5,
+    "charger_power": 66,
+    "battery_type": 3,
+    "battery_capacity": 4800,
+    "wireless_charging": false,
+    "fast_charging": true,
+    "charger": true,
+    "screen_protector": true,
+    "cable": 3,
+    "weight": 178,
+    "width": "73.30",
+    "height": "161.40",
+    "depth": "7.91",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      2,
+      3,
+      5
+    ],
+    "body_materials": [
+      3
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 11,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "70",
+    "model": "FNE-NX9",
+    "operating_system": 3,
+    "screen_diagonal": "6.67",
+    "screen_resolution_vertical": 2400,
+    "screen_resolution_horizontal": 1080,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 4,
+    "RAM": 8,
+    "ROM": 256,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": false,
+    "digital_stabilization": true,
+    "LiDAR_scanner": false,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 1,
+    "NFC": true,
+    "bluetooth_module": "5.2",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": true,
+    "USB_port": 2,
+    "protection_degree": null,
+    "color": 8,
+    "charger_power": 66,
+    "battery_type": 3,
+    "battery_capacity": 4800,
+    "wireless_charging": false,
+    "fast_charging": true,
+    "charger": true,
+    "screen_protector": true,
+    "cable": 3,
+    "weight": 178,
+    "width": "73.30",
+    "height": "161.40",
+    "depth": "7.91",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      2,
+      3,
+      5
+    ],
+    "body_materials": [
+      3
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 12,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "70",
+    "model": "FNE-NX9",
+    "operating_system": 3,
+    "screen_diagonal": "6.67",
+    "screen_resolution_vertical": 2400,
+    "screen_resolution_horizontal": 1080,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 4,
+    "RAM": 8,
+    "ROM": 128,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": false,
+    "digital_stabilization": true,
+    "LiDAR_scanner": false,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 1,
+    "NFC": true,
+    "bluetooth_module": "5.2",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": true,
+    "USB_port": 2,
+    "protection_degree": null,
+    "color": 8,
+    "charger_power": 66,
+    "battery_type": 3,
+    "battery_capacity": 4800,
+    "wireless_charging": false,
+    "fast_charging": true,
+    "charger": true,
+    "screen_protector": true,
+    "cable": 3,
+    "weight": 178,
+    "width": "73.30",
+    "height": "161.40",
+    "depth": "7.91",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      2,
+      3,
+      5
+    ],
+    "body_materials": [
+      3
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 13,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "iPhone 14 Pro Max",
+    "model": "",
+    "operating_system": 1,
+    "screen_diagonal": "6.70",
+    "screen_resolution_vertical": 2796,
+    "screen_resolution_horizontal": 1290,
+    "screen_technology": 1,
+    "screen_refresh_rate": 120,
+    "CPU": 2,
+    "RAM": 6,
+    "ROM": 256,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": true,
+    "digital_stabilization": false,
+    "LiDAR_scanner": true,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 3,
+    "NFC": true,
+    "bluetooth_module": "5.3",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": false,
+    "USB_port": 1,
+    "protection_degree": 1,
+    "color": 9,
+    "charger_power": 20,
+    "battery_type": 2,
+    "battery_capacity": null,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 2,
+    "weight": 240,
+    "width": "77.60",
+    "height": "160.70",
+    "depth": "7.85",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2
+    ],
+    "body_materials": [
+      2,
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 14,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "iPhone 14 Pro",
+    "model": "",
+    "operating_system": 1,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2556,
+    "screen_resolution_horizontal": 1179,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 5,
+    "RAM": 6,
+    "ROM": 128,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": true,
+    "digital_stabilization": false,
+    "LiDAR_scanner": true,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 3,
+    "NFC": true,
+    "bluetooth_module": "5.3",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": false,
+    "USB_port": 1,
+    "protection_degree": 1,
+    "color": 10,
+    "charger_power": 20,
+    "battery_type": 2,
+    "battery_capacity": null,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 2,
+    "weight": 206,
+    "width": "71.50",
+    "height": "147.50",
+    "depth": "7.85",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2
+    ],
+    "body_materials": [
+      2,
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 15,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "iPhone 14 Pro",
+    "model": "",
+    "operating_system": 1,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2556,
+    "screen_resolution_horizontal": 1179,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 5,
+    "RAM": 6,
+    "ROM": 256,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": true,
+    "digital_stabilization": false,
+    "LiDAR_scanner": true,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 3,
+    "NFC": true,
+    "bluetooth_module": "5.3",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": false,
+    "USB_port": 1,
+    "protection_degree": 1,
+    "color": 10,
+    "charger_power": 20,
+    "battery_type": 2,
+    "battery_capacity": null,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 2,
+    "weight": 206,
+    "width": "71.50",
+    "height": "147.50",
+    "depth": "7.85",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2
+    ],
+    "body_materials": [
+      2,
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 16,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "iPhone 14 Pro",
+    "model": "",
+    "operating_system": 1,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2556,
+    "screen_resolution_horizontal": 1179,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 5,
+    "RAM": 6,
+    "ROM": 256,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": true,
+    "digital_stabilization": false,
+    "LiDAR_scanner": true,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 3,
+    "NFC": true,
+    "bluetooth_module": "5.3",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": false,
+    "USB_port": 1,
+    "protection_degree": 1,
+    "color": 8,
+    "charger_power": 20,
+    "battery_type": 2,
+    "battery_capacity": null,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 2,
+    "weight": 206,
+    "width": "71.50",
+    "height": "147.50",
+    "depth": "7.85",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2
+    ],
+    "body_materials": [
+      2,
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 17,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "iPhone 14 Pro",
+    "model": "",
+    "operating_system": 1,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2556,
+    "screen_resolution_horizontal": 1179,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 5,
+    "RAM": 6,
+    "ROM": 512,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": true,
+    "digital_stabilization": false,
+    "LiDAR_scanner": true,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 3,
+    "NFC": true,
+    "bluetooth_module": "5.3",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": false,
+    "USB_port": 1,
+    "protection_degree": 1,
+    "color": 8,
+    "charger_power": 20,
+    "battery_type": 2,
+    "battery_capacity": null,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 2,
+    "weight": 206,
+    "width": "71.50",
+    "height": "147.50",
+    "depth": "7.85",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2
+    ],
+    "body_materials": [
+      2,
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 18,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "iPhone 14 Pro",
+    "model": "",
+    "operating_system": 1,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2556,
+    "screen_resolution_horizontal": 1179,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 5,
+    "RAM": 6,
+    "ROM": 512,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": true,
+    "digital_stabilization": false,
+    "LiDAR_scanner": true,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 3,
+    "NFC": true,
+    "bluetooth_module": "5.3",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": false,
+    "USB_port": 1,
+    "protection_degree": 1,
+    "color": 5,
+    "charger_power": 20,
+    "battery_type": 2,
+    "battery_capacity": null,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 2,
+    "weight": 206,
+    "width": "71.50",
+    "height": "147.50",
+    "depth": "7.85",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2
+    ],
+    "body_materials": [
+      2,
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "shop.smartphone",
+  "pk": 19,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "iPhone 14 Pro",
+    "model": "",
+    "operating_system": 1,
+    "screen_diagonal": "6.10",
+    "screen_resolution_vertical": 2556,
+    "screen_resolution_horizontal": 1179,
+    "screen_technology": 1,
+    "screen_refresh_rate": 60,
+    "CPU": 5,
+    "RAM": 6,
+    "ROM": 128,
+    "number_of_main_cameras": 3,
+    "optical_stabilization": true,
+    "digital_stabilization": false,
+    "LiDAR_scanner": true,
+    "video_resolution_horizontal": 3840,
+    "video_resolution_vertical": 2160,
+    "number_of_front_cameras": 1,
+    "SIM_card": 3,
+    "NFC": true,
+    "bluetooth_module": "5.3",
+    "GPS": true,
+    "glonass": true,
+    "face_recognition": true,
+    "fingerprint_scanner": false,
+    "USB_port": 1,
+    "protection_degree": 1,
+    "color": 9,
+    "charger_power": 20,
+    "battery_type": 2,
+    "battery_capacity": null,
+    "wireless_charging": true,
+    "fast_charging": true,
+    "charger": false,
+    "screen_protector": false,
+    "cable": 2,
+    "weight": 206,
+    "width": "71.50",
+    "height": "147.50",
+    "depth": "7.85",
+    "data_transmission_standards": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sensors": [
+      1,
+      2
+    ],
+    "body_materials": [
+      2,
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "shop.manufacturercountry",
+  "pk": 1,
+  "fields": {
+    "title": "Китай"
+  }
+},
+{
+  "model": "shop.manufacturercountry",
+  "pk": 2,
+  "fields": {
+    "title": "Вьетнам"
+  }
+},
+{
+  "model": "shop.operatingsystem",
+  "pk": 1,
+  "fields": {
+    "title": "iOS"
+  }
+},
+{
+  "model": "shop.operatingsystem",
+  "pk": 2,
+  "fields": {
+    "title": "Android 13"
+  }
+},
+{
+  "model": "shop.operatingsystem",
+  "pk": 3,
+  "fields": {
+    "title": "Android Magic UI 6.1"
+  }
+},
+{
+  "model": "shop.smartphonecpu",
+  "pk": 2,
+  "fields": {
+    "title": "A15 Bionic",
+    "cores": 6
+  }
+},
+{
+  "model": "shop.smartphonecpu",
+  "pk": 3,
+  "fields": {
+    "title": "Qualcomm Snapdragon 8 Gen 2",
+    "cores": 8
+  }
+},
+{
+  "model": "shop.smartphonecpu",
+  "pk": 4,
+  "fields": {
+    "title": "Qualcomm Snapdragon 778G 2.5 ГГц",
+    "cores": 8
+  }
+},
+{
+  "model": "shop.smartphonecpu",
+  "pk": 5,
+  "fields": {
+    "title": "A16 Bionic",
+    "cores": 6
+  }
+},
+{
+  "model": "shop.smartphoneusbport",
+  "pk": 1,
+  "fields": {
+    "title": "Lightning"
+  }
+},
+{
+  "model": "shop.smartphoneusbport",
+  "pk": 2,
+  "fields": {
+    "title": "USB Type-C"
+  }
+},
+{
+  "model": "shop.screentechnology",
+  "pk": 1,
+  "fields": {
+    "title": "OLED"
+  }
+},
+{
+  "model": "shop.screentechnology",
+  "pk": 2,
+  "fields": {
+    "title": "Dynamic AMOLED 2X"
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 1,
+  "fields": {
+    "smartphone": 2,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 2,
+  "fields": {
+    "smartphone": 2,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 3,
+  "fields": {
+    "smartphone": 4,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 4,
+  "fields": {
+    "smartphone": 4,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 5,
+  "fields": {
+    "smartphone": 5,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 6,
+  "fields": {
+    "smartphone": 5,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 7,
+  "fields": {
+    "smartphone": 6,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 8,
+  "fields": {
+    "smartphone": 6,
+    "megapixels": 50
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 9,
+  "fields": {
+    "smartphone": 6,
+    "megapixels": 10
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 10,
+  "fields": {
+    "smartphone": 7,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 11,
+  "fields": {
+    "smartphone": 7,
+    "megapixels": 50
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 12,
+  "fields": {
+    "smartphone": 7,
+    "megapixels": 10
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 13,
+  "fields": {
+    "smartphone": 9,
+    "megapixels": 54
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 14,
+  "fields": {
+    "smartphone": 9,
+    "megapixels": 50
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 15,
+  "fields": {
+    "smartphone": 9,
+    "megapixels": 2
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 16,
+  "fields": {
+    "smartphone": 10,
+    "megapixels": 54
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 17,
+  "fields": {
+    "smartphone": 10,
+    "megapixels": 50
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 18,
+  "fields": {
+    "smartphone": 10,
+    "megapixels": 2
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 19,
+  "fields": {
+    "smartphone": 11,
+    "megapixels": 54
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 20,
+  "fields": {
+    "smartphone": 11,
+    "megapixels": 50
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 21,
+  "fields": {
+    "smartphone": 11,
+    "megapixels": 2
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 22,
+  "fields": {
+    "smartphone": 12,
+    "megapixels": 54
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 23,
+  "fields": {
+    "smartphone": 12,
+    "megapixels": 50
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 24,
+  "fields": {
+    "smartphone": 12,
+    "megapixels": 2
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 25,
+  "fields": {
+    "smartphone": 13,
+    "megapixels": 48
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 26,
+  "fields": {
+    "smartphone": 13,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 27,
+  "fields": {
+    "smartphone": 13,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 28,
+  "fields": {
+    "smartphone": 14,
+    "megapixels": 48
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 29,
+  "fields": {
+    "smartphone": 14,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 30,
+  "fields": {
+    "smartphone": 14,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 31,
+  "fields": {
+    "smartphone": 15,
+    "megapixels": 48
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 32,
+  "fields": {
+    "smartphone": 15,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 33,
+  "fields": {
+    "smartphone": 15,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 34,
+  "fields": {
+    "smartphone": 16,
+    "megapixels": 48
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 35,
+  "fields": {
+    "smartphone": 16,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 36,
+  "fields": {
+    "smartphone": 16,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 37,
+  "fields": {
+    "smartphone": 17,
+    "megapixels": 48
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 38,
+  "fields": {
+    "smartphone": 17,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 39,
+  "fields": {
+    "smartphone": 17,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 40,
+  "fields": {
+    "smartphone": 18,
+    "megapixels": 48
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 41,
+  "fields": {
+    "smartphone": 18,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 42,
+  "fields": {
+    "smartphone": 18,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 43,
+  "fields": {
+    "smartphone": 19,
+    "megapixels": 48
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 44,
+  "fields": {
+    "smartphone": 19,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonemaincamera",
+  "pk": 45,
+  "fields": {
+    "smartphone": 19,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 1,
+  "fields": {
+    "smartphone": 2,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 2,
+  "fields": {
+    "smartphone": 4,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 3,
+  "fields": {
+    "smartphone": 5,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 4,
+  "fields": {
+    "smartphone": 6,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 5,
+  "fields": {
+    "smartphone": 7,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 6,
+  "fields": {
+    "smartphone": 9,
+    "megapixels": 32
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 7,
+  "fields": {
+    "smartphone": 10,
+    "megapixels": 32
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 8,
+  "fields": {
+    "smartphone": 11,
+    "megapixels": 32
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 9,
+  "fields": {
+    "smartphone": 12,
+    "megapixels": 32
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 10,
+  "fields": {
+    "smartphone": 13,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 11,
+  "fields": {
+    "smartphone": 14,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 12,
+  "fields": {
+    "smartphone": 15,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 13,
+  "fields": {
+    "smartphone": 16,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 14,
+  "fields": {
+    "smartphone": 17,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 15,
+  "fields": {
+    "smartphone": 18,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.smartphonefrontcamera",
+  "pk": 16,
+  "fields": {
+    "smartphone": 19,
+    "megapixels": 12
+  }
+},
+{
+  "model": "shop.simcard",
+  "pk": 1,
+  "fields": {
+    "title": "2 nano-SIM"
+  }
+},
+{
+  "model": "shop.simcard",
+  "pk": 2,
+  "fields": {
+    "title": "2 nano-SIM/eSIM"
+  }
+},
+{
+  "model": "shop.simcard",
+  "pk": 3,
+  "fields": {
+    "title": "nano-SIM/eSIM"
+  }
+},
+{
+  "model": "shop.datatransmissionstandard",
+  "pk": 1,
+  "fields": {
+    "title": "2G"
+  }
+},
+{
+  "model": "shop.datatransmissionstandard",
+  "pk": 2,
+  "fields": {
+    "title": "3G"
+  }
+},
+{
+  "model": "shop.datatransmissionstandard",
+  "pk": 3,
+  "fields": {
+    "title": "4G"
+  }
+},
+{
+  "model": "shop.datatransmissionstandard",
+  "pk": 4,
+  "fields": {
+    "title": "5G"
+  }
+},
+{
+  "model": "shop.smartphonesensor",
+  "pk": 1,
+  "fields": {
+    "title": "встроенный барометр"
+  }
+},
+{
+  "model": "shop.smartphonesensor",
+  "pk": 2,
+  "fields": {
+    "title": "ориентации экрана"
+  }
+},
+{
+  "model": "shop.smartphonesensor",
+  "pk": 3,
+  "fields": {
+    "title": "цифровой компас"
+  }
+},
+{
+  "model": "shop.smartphonesensor",
+  "pk": 4,
+  "fields": {
+    "title": "силы нажатия"
+  }
+},
+{
+  "model": "shop.smartphonesensor",
+  "pk": 5,
+  "fields": {
+    "title": "ускорения (G-sensor)"
+  }
+},
+{
+  "model": "shop.gadgetbodymaterial",
+  "pk": 1,
+  "fields": {
+    "title": "пластик"
+  }
+},
+{
+  "model": "shop.gadgetbodymaterial",
+  "pk": 2,
+  "fields": {
+    "title": "Ceramic Shield"
+  }
+},
+{
+  "model": "shop.gadgetbodymaterial",
+  "pk": 3,
+  "fields": {
+    "title": "стекло"
+  }
+},
+{
+  "model": "shop.gadgetbodymaterial",
+  "pk": 4,
+  "fields": {
+    "title": "алюминий"
+  }
+},
+{
+  "model": "shop.gadgetbodymaterial",
+  "pk": 5,
+  "fields": {
+    "title": "металл"
+  }
+},
+{
+  "model": "shop.gadgetbodymaterial",
+  "pk": 6,
+  "fields": {
+    "title": "поликарбонат"
+  }
+},
+{
+  "model": "shop.gadgetbodymaterial",
+  "pk": 7,
+  "fields": {
+    "title": "нержавеющая сталь"
+  }
+},
+{
+  "model": "shop.smartphonebodyprotection",
+  "pk": 1,
+  "fields": {
+    "title": "IP68"
+  }
+},
+{
+  "model": "shop.gadgetcolor",
+  "pk": 1,
+  "fields": {
+    "title": "белый"
+  }
+},
+{
+  "model": "shop.gadgetcolor",
+  "pk": 2,
+  "fields": {
+    "title": "сияющая звезда"
+  }
+},
+{
+  "model": "shop.gadgetcolor",
+  "pk": 3,
+  "fields": {
+    "title": "голубой"
+  }
+},
+{
+  "model": "shop.gadgetcolor",
+  "pk": 4,
+  "fields": {
+    "title": "розовый"
+  }
+},
+{
+  "model": "shop.gadgetcolor",
+  "pk": 5,
+  "fields": {
+    "title": "черный"
+  }
+},
+{
+  "model": "shop.gadgetcolor",
+  "pk": 6,
+  "fields": {
+    "title": "зеленый"
+  }
+},
+{
+  "model": "shop.gadgetcolor",
+  "pk": 7,
+  "fields": {
+    "title": "синий"
+  }
+},
+{
+  "model": "shop.gadgetcolor",
+  "pk": 8,
+  "fields": {
+    "title": "серебристый"
+  }
+},
+{
+  "model": "shop.gadgetcolor",
+  "pk": 9,
+  "fields": {
+    "title": "золотистый"
+  }
+},
+{
+  "model": "shop.gadgetcolor",
+  "pk": 10,
+  "fields": {
+    "title": "темно-фиолетовый"
+  }
+},
+{
+  "model": "shop.gadgetcable",
+  "pk": 1,
+  "fields": {
+    "to_gadget": "Apple Lightning",
+    "to_charger": "USB 2.0 тип А"
+  }
+},
+{
+  "model": "shop.gadgetcable",
+  "pk": 2,
+  "fields": {
+    "to_gadget": "Lightning",
+    "to_charger": "USB Type-C"
+  }
+},
+{
+  "model": "shop.gadgetcable",
+  "pk": 3,
+  "fields": {
+    "to_gadget": "USB Type-C",
+    "to_charger": "USB Type-C"
+  }
+},
+{
+  "model": "shop.batterytype",
+  "pk": 1,
+  "fields": {
+    "title": "встроенный"
+  }
+},
+{
+  "model": "shop.batterytype",
+  "pk": 2,
+  "fields": {
+    "title": "Li-Ion"
+  }
+},
+{
+  "model": "shop.batterytype",
+  "pk": 3,
+  "fields": {
+    "title": "Li-Ion Polymer"
+  }
+},
+{
+  "model": "shop.headphones",
+  "pk": 1,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "AirPods",
+    "model": "AirPods 2",
+    "connection_type": 1,
+    "bluetooth_version": "5.0",
+    "type": 1,
+    "built_in_microphone": true,
+    "active_noise_control": false,
+    "use_as_headset": true,
+    "playback_control": true,
+    "fast_charging": true,
+    "wireless_charging": false,
+    "battery_type": 1,
+    "battery_capacity": 398,
+    "charging_from_USB_port": true,
+    "splashproof_body": false,
+    "charger": false,
+    "cable": 1,
+    "ear_pads_pairs": 0,
+    "color": 1,
+    "weight": 8,
+    "body_materials": [
+      1
+    ]
+  }
+},
+{
+  "model": "shop.headphones",
+  "pk": 8,
+  "fields": {
+    "guarantee": 1,
+    "manufacturer_country": 1,
+    "series": "Buds Air 3",
+    "model": "RMA2105",
+    "connection_type": 1,
+    "bluetooth_version": "5.2",
+    "type": 2,
+    "built_in_microphone": true,
+    "active_noise_control": true,
+    "use_as_headset": false,
+    "playback_control": false,
+    "fast_charging": true,
+    "wireless_charging": false,
+    "battery_type": 1,
+    "battery_capacity": 460,
+    "charging_from_USB_port": true,
+    "splashproof_body": false,
+    "charger": false,
+    "cable": 3,
+    "ear_pads_pairs": 0,
+    "color": 7,
+    "weight": 57,
+    "body_materials": [
+      1,
+      6
+    ]
+  }
+},
+{
+  "model": "shop.headphonesconnectiontype",
+  "pk": 1,
+  "fields": {
+    "title": "беспроводной"
+  }
+},
+{
+  "model": "shop.headphonestype",
+  "pk": 1,
+  "fields": {
+    "title": "вкладыши"
+  }
+},
+{
+  "model": "shop.headphonestype",
+  "pk": 2,
+  "fields": {
+    "title": "внутриканальные"
+  }
+}
+]

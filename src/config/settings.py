@@ -179,6 +179,7 @@ Configuration.configure(
 # Model reorder in admin panel
 ADMIN_REORDER = [
     {'app': 'shop', 'label': 'Магазин', 'models': ('shop.Category', 'shop.Brand', 'shop.ManufacturerCountry')},
+    {'app': 'orders', 'models': ('orders.Order',)},
     {'app': 'shop', 'label': 'Смартфоны',
      'models': ('shop.Smartphone', 'shop.OperatingSystem', 'shop.SmartPhoneCPU', 'shop.SmartPhoneUSBPort',
                 'shop.ScreenTechnology', 'shop.SmartPhoneMainCamera', 'shop.SmartPhoneFrontCamera', 'shop.SIMCard',
@@ -187,6 +188,5 @@ ADMIN_REORDER = [
     {'app': 'shop', 'label': 'Наушники',
      'models': ('shop.Headphones', 'shop.HeadphonesConnectionType', 'shop.HeadphonesType', 'shop.GadgetBodyMaterial',
                 'shop.GadgetColor', 'shop.GadgetCable', 'shop.BatteryType')},
-    {'app': 'orders', 'models': ('orders.Order',)},
     {'app': 'auth', 'models': ('auth.User', 'auth.Group')}
 ]
